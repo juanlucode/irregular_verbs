@@ -8,8 +8,12 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	
+    	Repository repo = new Repository();
+    	
+    	
+
     }
 }
 
-https://blog.openalfa.com/como-leer-y-escribir-ficheros-json-en-java
+// https://blog.openalfa.com/como-leer-y-escribir-ficheros-json-en-java
