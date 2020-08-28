@@ -21,30 +21,41 @@ public class Repository {
 		load();
 	}
 	
+	/**
+	 * Gets the repository size. Number of verbs.
+	 */
+	public int size() {
+		return verbList.size();
+	}
+	
+	/**
+	 * Generates a questionary with a number of questions for a determinate level.
+	 * The verbs are random selected.
+	 * @param numQuestions
+	 * @param level
+	 * @return
+	 */
 	public Questionary generateQuestionary(byte numQuestions, Level level) {
 		// list of index verb selected, used to avoid repetitions
-		List<Integer> listSelected = new ArrayList<Integer>();
-		// array of verbs to generate questionary
-		Verb[] verbs = new Verb[numQuestions];
+		List<Verb> listSelected = new ArrayList<>();
 		
 		Random random = new Random();
 		
 		// selection verb counter
-		int idxVerb = 0;
+		Verb verbCandidate = null;
 		
 		for ( var i = 0; i < numQuestions; i++ ) {
 			do {
 				// select random verb in repository
-				idxVerb = random.nextInt(verbList.size());
+				verbCandidate = verbList.get(random.nextInt(verbList.size()));
 				// avoiding repetitions
-			} while(listSelected.contains(idxVerb));
-			listSelected.add(idxVerb);
-			// include verb
-			verbs[i] = verbList.get(idxVerb);
+			} while(listSelected.contains(verbCandidate));
+			listSelected.add(verbCandidate);
+
 		}
 		
 		// set questionary with array verbs and level of questions
-		Questionary questionary = new Questionary(verbs, level);
+		Questionary questionary = new Questionary( listSelected, level);
 		
 		// when translate field is null, we need to generate options
 		// for test question
@@ -60,18 +71,21 @@ public class Repository {
 		String[] ops = {null, null, null, question.getVerbOrigin().getTranslate()};
 		Random random = new Random();
 		boolean ok = true;
-		int randomVerb;
+		Verb randomVerb;
 		for ( byte i = 0; i < 3; i++ ) {
 			do {
-				randomVerb = random.nextInt(verbList.size());
-				if (verbList.get(randomVerb).equals(question.getVerbOrigin()))
+				randomVerb = verbList.get(random.nextInt(verbList.size()));
+				if ( randomVerb.equals(question.getVerbOrigin()) )
 					ok = false;
 				else
 					if ( i > 0 )
 						for (int j = i - 1; j >= 0;j--)
-							if (ops[i] == ops[j]) ok = false;
-			} while(ok);
-			ops[i] = verbList.get(randomVerb).getTranslate();
+							if ( randomVerb.equals(ops[j]) ) {
+								ok = false;
+								break;
+							}
+			} while ( !ok );
+			ops[i] = randomVerb.getTranslate();
 		}
 		// shuffle the array ops
 		question.setTranslateOps(ArrayTools.shuffleArray(ops));

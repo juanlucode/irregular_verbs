@@ -1,5 +1,7 @@
 package io.github.juanlucode.irregular_verbs;
 
+import java.util.List;
+
 public class Questionary {
 	private Question[] questions;
 
@@ -7,13 +9,13 @@ public class Questionary {
 		return this.questions;
 	}
 	
-	public Questionary(Verb[] verbs, Level level) {
+	public Questionary(List<Verb> verbs, Level level) {
 		
-		questions = new Question[verbs.length];
+		this.questions = new Question[verbs.size()];
 		
 		byte i = 0;
 		for (Verb verb : verbs)
-			questions[i++] = new Question( verb, level);
+			this.questions[i++] = new Question( verb, level);
 	}
 	
 	public float check() {

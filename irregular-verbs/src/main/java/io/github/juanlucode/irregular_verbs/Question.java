@@ -1,5 +1,7 @@
 package io.github.juanlucode.irregular_verbs;
 
+import java.util.Arrays;
+
 public class Question {
 
 	private Verb verbOrigin;
@@ -38,5 +40,11 @@ public class Question {
 	private void generateQuestion(Verb _verb, Level _level) {
 		this.verbResponse = _verb.generateQuestion(_level);
 		
+	}
+	
+	@Override
+	public String toString() {
+		return "Question [verbOrigin=" + verbOrigin + ", verbResponse=" + verbResponse + ", translateOps="
+				+ Arrays.toString(translateOps) + "]";
 	}
 }
