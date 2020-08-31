@@ -1,4 +1,4 @@
-package io.github.juanlucode.irregular_verbs;
+package io.github.juanlucode.irregular_verbs.models;
 
 import java.io.File;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package io.github.juanlucode.irregular_verbs;
+package io.github.juanlucode.irregular_verbs.models;
 
 import com.github.juanlucode.commons.ArrayTools;
 

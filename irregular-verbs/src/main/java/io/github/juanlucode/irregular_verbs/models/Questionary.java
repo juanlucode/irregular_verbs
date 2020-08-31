@@ -1,11 +1,11 @@
-package io.github.juanlucode.irregular_verbs;
+package io.github.juanlucode.irregular_verbs.models;
 
 import java.util.List;
 
 public class Questionary {
 	private Question[] questions;
 
-	Question[] getQuestions() {
+	public Question[] getQuestions() {
 		return this.questions;
 	}
 	

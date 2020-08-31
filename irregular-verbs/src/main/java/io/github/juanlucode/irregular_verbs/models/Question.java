@@ -1,4 +1,4 @@
-package io.github.juanlucode.irregular_verbs;
+package io.github.juanlucode.irregular_verbs.models;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class Question {
 		return this.verbOrigin;
 	}
 	
-	Verb getVerbResponse() {
+	public Verb getVerbResponse() {
 		return this.verbResponse;
 	}
 
@@ -20,7 +20,7 @@ public class Question {
 		this.verbResponse = verbResponse;
 	}
 	
-	String[] getTranslateOps() {
+	public String[] getTranslateOps() {
 		return this.translateOps;
 	}
 	

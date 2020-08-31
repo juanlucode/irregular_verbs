@@ -9,6 +9,11 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import io.github.juanlucode.irregular_verbs.models.Level;
+import io.github.juanlucode.irregular_verbs.models.Question;
+import io.github.juanlucode.irregular_verbs.models.Questionary;
+import io.github.juanlucode.irregular_verbs.models.Repository;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GeneralTest {
 
