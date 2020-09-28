@@ -39,7 +39,6 @@ public class App {
     	System.out.println();
     	
     	Verb verbAsked = null;
-    	byte numQuest = 0;
     	for (Question question : questionary.getQuestions()) {
     		verbAsked = question.getVerbResponse();
     		
@@ -77,6 +76,8 @@ public class App {
        			
     	}
     	
+    	scanner.close();
+    	
     	// Results
     	System.out.println("");
     	System.out.println("******************");
@@ -85,6 +86,8 @@ public class App {
     	System.out.println(questionary.check());
 
     }
+    
+    
 }
 
 // https://blog.openalfa.com/como-leer-y-escribir-ficheros-json-en-java

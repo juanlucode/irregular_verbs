@@ -80,7 +80,7 @@ public class Repository {
 				else
 					if ( i > 0 )
 						for (int j = i - 1; j >= 0;j--)
-							if ( randomVerb.equals(ops[j]) ) {
+							if ( randomVerb.getTranslate().equals(ops[j]) ) {
 								ok = false;
 								break;
 							}
@@ -100,7 +100,7 @@ public class Repository {
         Gson gson = new Gson();
 
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("irregular_verbs.json").getFile());
+        File file = new File(classLoader.getResource("repo/irregular_verbs.json").getFile());
         
         Type listType = new TypeToken<List<Verb>>() {}.getType();
         
