@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import com.github.juanlucode.irregular_verbs.controllers.Controller;
 import com.github.juanlucode.irregular_verbs.controllers.ControllerFactory;
 
+import io.github.juanlucode.irregular_verbs.models.Level;
+
 //import com.github.juanlucode.defutbol_app.i18n.I18N;
 
 //import java.io.IOException;
@@ -37,14 +39,23 @@ public class MainAppFx extends Application implements AppManagement{
 	
 	private Stage stage;
 	
+	private Level level;
+	
 	/*
-	 * Getters
+	 * Getters & Setters
 	 */
 
 	public Stage getPrimaryStage() {
 		return stage;
 	}
 	
+	public Level getLevel() {
+		return this.level;
+	}
+	
+	public void setLevel(Level _level) {
+		this.level = _level;
+	}
 	/*
 	 * Public Methods
 	 */

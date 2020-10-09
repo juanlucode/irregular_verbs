@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label text="Irregular Vers Test">
@@ -14,8 +13,8 @@
          </font>
       </Label>
       <Label prefHeight="18.0" prefWidth="149.0" text="Choose level" />
-      <Button mnemonicParsing="false" text="Easy" />
-      <Button mnemonicParsing="false" text="Medium" />
-      <Button mnemonicParsing="false" text="Hard" />
+      <Button fx:id="btnEasy" mnemonicParsing="false" text="Easy" />
+      <Button fx:id="btnMedium" mnemonicParsing="false" text="Medium" />
+      <Button fx:id="btnHard" mnemonicParsing="false" text="Hard" />
    </children>
 </VBox>

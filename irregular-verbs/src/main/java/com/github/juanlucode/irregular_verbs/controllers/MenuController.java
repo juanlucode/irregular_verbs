@@ -1,12 +1,36 @@
 package com.github.juanlucode.irregular_verbs.controllers;
 
 import com.github.juanlucode.irregular_verbs.front.MainAppFx;
+import com.github.juanlucode.irregular_verbs.front.View;
+
+import io.github.juanlucode.irregular_verbs.models.Level;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class MenuController extends Controller {
 
 	MenuController(MainAppFx _mainAppFx) {
 		super(_mainAppFx);
-		// TODO Auto-generated constructor stub
 	}
 
+	@FXML
+	private Button btnEasy;
+	
+	@FXML
+	private Button btnMedium;
+	
+	@FXML
+	private Button btnHard;
+	
+	@FXML
+	private void initialize() {
+		btnEasy.setOnAction(e -> this.selectLevel(Level.LEVEL_LIGHT));
+		btnMedium.setOnAction(e -> this.selectLevel(Level.LEVEL_MEDIUM));
+		btnMedium.setOnAction(e -> this.selectLevel(Level.LEVEL_HARD));
+	}
+	
+	private void selectLevel(Level _level) {
+		this.getMainAppFx().setLevel(_level);
+		this.getMainAppFx().toScene(View.QUESTION);		
+	}
 }
