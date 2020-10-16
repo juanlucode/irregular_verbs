@@ -11,6 +11,7 @@ import com.github.juanlucode.irregular_verbs.controllers.Controller;
 import com.github.juanlucode.irregular_verbs.controllers.ControllerFactory;
 
 import io.github.juanlucode.irregular_verbs.models.Level;
+import io.github.juanlucode.irregular_verbs.models.Test;
 
 //import com.github.juanlucode.defutbol_app.i18n.I18N;
 
@@ -39,7 +40,9 @@ public class MainAppFx extends Application implements AppManagement{
 	
 	private Stage stage;
 	
-	private Level level;
+	private Test test;
+	
+	//private Level level;
 	
 	/*
 	 * Getters & Setters
@@ -49,13 +52,14 @@ public class MainAppFx extends Application implements AppManagement{
 		return stage;
 	}
 	
-	public Level getLevel() {
-		return this.level;
+	public Test getTest() {
+		return this.test;
 	}
 	
-	public void setLevel(Level _level) {
-		this.level = _level;
+	public void setTest(Test _test) {
+		this.test = _test ;
 	}
+	
 	/*
 	 * Public Methods
 	 */

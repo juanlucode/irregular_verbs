@@ -4,6 +4,7 @@ import com.github.juanlucode.irregular_verbs.front.MainAppFx;
 import com.github.juanlucode.irregular_verbs.front.View;
 
 import io.github.juanlucode.irregular_verbs.models.Level;
+import io.github.juanlucode.irregular_verbs.models.Test;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -30,7 +31,7 @@ public class MenuController extends Controller {
 	}
 	
 	private void selectLevel(Level _level) {
-		this.getMainAppFx().setLevel(_level);
+		this.getMainAppFx().setTest(new Test(_level));
 		this.getMainAppFx().toScene(View.QUESTION);		
 	}
 }
