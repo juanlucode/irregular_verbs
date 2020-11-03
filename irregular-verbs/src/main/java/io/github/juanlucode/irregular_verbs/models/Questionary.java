@@ -18,7 +18,7 @@ public class Questionary {
 			this.questions[i++] = new Question( verb, level);
 	}
 	
-	public float check() {
+	public QuestionaryResult check() {
 		var total = 0;
 		var correct = 0;
 		for ( Question question : this.questions ) {
@@ -26,7 +26,7 @@ public class Questionary {
 			if ( question.isCorrect() )
 				correct++;
 		}
-		return (float) correct / total;
+		return new QuestionaryResult(total, correct);
 		
 	}
 	

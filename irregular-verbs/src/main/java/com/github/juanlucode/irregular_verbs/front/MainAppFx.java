@@ -68,7 +68,6 @@ public class MainAppFx extends Application implements AppManagement{
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		launch();
 	}
 
@@ -99,7 +98,6 @@ public class MainAppFx extends Application implements AppManagement{
 		try {
 			root = loader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         Scene scene = new Scene(root);

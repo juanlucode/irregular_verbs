@@ -5,39 +5,37 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label text="TOTALS" />
       <HBox prefHeight="29.0" prefWidth="600.0">
          <children>
             <Label text="Verbs:" />
-            <Label text="#" />
+            <Label fx:id="lblVerbsResult" text="#" />
          </children>
       </HBox>
       <HBox prefHeight="37.0" prefWidth="600.0">
          <children>
-            <Label text="Correct:" />
-            <Label text="#" />
+            <Label text="Corrects:" />
+            <Label fx:id="lblCorrectsResult" text="#" />
          </children>
       </HBox>
-      <HBox prefHeight="37.0" prefWidth="600.0">
+      <HBox fx:id="lblWrongsResult" prefHeight="37.0" prefWidth="600.0">
          <children>
-            <Label text="Wrong:" />
+            <Label text="Wrongs:" />
             <Label text="#" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="Percent:" />
-            <Label text="#" />
+            <Label fx:id="lblPercentResult" text="#" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Report" />
-            <Button mnemonicParsing="false" text="New test" />
-            <Button mnemonicParsing="false" text="Exit" />
+            <Button fx:id="btnNewTest" mnemonicParsing="false" text="New test" />
+            <Button fx:id="btnExit" mnemonicParsing="false" text="Exit" />
          </children>
       </HBox>
    </children>

@@ -58,9 +58,20 @@ public class QuestionController extends Controller {
 	private void showQuestion(Question question) {
 		Verb verb = question.getVerbResponse();
 		txtInfinitive.setText(verb.getInfinitive());
+		txtInfinitive.setDisable(verb.getInfinitive() != null);
 		txtPast.setText(verb.getPast());
+		txtPast.setDisable(verb.getPast() != null);
 		txtParticiple.setText(verb.getParticiple());
-		cboTranslate.getItems().addAll(question.getTranslateOps());
+		txtParticiple.setDisable(verb.getParticiple() != null);
+		// show translate
+		cboTranslate.getItems().clear();
+		if (verb.getTranslate() == null ) {
+			cboTranslate.getItems().addAll(question.getTranslateOps());
+			cboTranslate.setDisable(false);
+		} else {
+			cboTranslate.setValue(verb.getTranslate());
+			cboTranslate.setDisable(true);
+		}
 		
 	}
 }
