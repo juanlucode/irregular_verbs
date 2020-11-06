@@ -41,17 +41,15 @@ class GeneralTest {
 		assertEquals(10, questionary.getQuestions().length);
 		
 		// all questions are unsolved yet.
-		assertEquals(0.0f, questionary.check());
+		var questionaryResult = questionary.check();
+		assertEquals(0, questionaryResult.getCorrects());
+		assertEquals(0.0f, questionaryResult.getPercent() );
 		
 		for ( Question question : questionary.getQuestions() ) {
 			
 			System.out.println(question);
-			/*
-			System.out.println(question.getVerbResponse().toString());
-			if ( question.getTranslateOps() != null )
-				for (String op : question.getTranslateOps())
-					System.out.println(op);
-			*/
+
 		}
 	}
+	
 }

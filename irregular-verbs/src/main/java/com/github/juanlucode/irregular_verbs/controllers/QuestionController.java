@@ -16,6 +16,7 @@ public class QuestionController extends Controller {
 
 	private Test test;
 	private byte idxQuestion = -1;
+	private Question question = null;
 	
 	QuestionController(MainAppFx _mainAppFx) {
 		super(_mainAppFx);
@@ -40,37 +41,61 @@ public class QuestionController extends Controller {
 	@FXML
 	private void initialize() {
 		
+		// txtInfinitive onChange Event
+		txtInfinitive.textProperty().addListener((observable, oldValue, newValue) -> {
+			question.getVerbResponse().setInfinitive(newValue);
+		});
+		
+		// txtPast onChange Event
+		txtPast.textProperty().addListener((observable, oldValue, newValue) -> {
+			question.getVerbResponse().setPast(newValue);
+		});
+		
+		// txtParticiple onChange Event
+		txtParticiple.textProperty().addListener((observable, oldValue, newValue) -> {
+			question.getVerbResponse().setParticiple(newValue);
+		});
+		
+		// cboTranslate onChange Event
+		cboTranslate.valueProperty().addListener((observable, oldValue, newValue) -> {
+			if ( newValue != null )
+				question.getVerbResponse().setTranslate(newValue);
+		});		
+		
 		btnNext.setOnAction(e -> nextQuestion());
 		this.nextQuestion();
 	}
 	
 	private void nextQuestion() {
 		
+
 		idxQuestion++;
 		if ( idxQuestion == this.test.getQuestionary().getQuestions().length )
 			this.getMainAppFx().toScene(View.RESULT);
 		else {
-			showQuestion(test.getQuestionary().getQuestions()[idxQuestion]);
+			question = test.getQuestionary().getQuestions()[idxQuestion];
+			showQuestion(question);
 		}
 		
 	}
 
-	private void showQuestion(Question question) {
-		Verb verb = question.getVerbResponse();
+	private void showQuestion(Question _question) {
+		Verb verb = _question.getVerbResponse();
 		txtInfinitive.setText(verb.getInfinitive());
-		txtInfinitive.setDisable(verb.getInfinitive() != null);
+		txtInfinitive.setEditable(verb.getInfinitive() == null);
 		txtPast.setText(verb.getPast());
-		txtPast.setDisable(verb.getPast() != null);
+		txtPast.setEditable(verb.getPast() == null);
 		txtParticiple.setText(verb.getParticiple());
-		txtParticiple.setDisable(verb.getParticiple() != null);
+		txtParticiple.setEditable(verb.getParticiple() == null);
 		// show translate
+		cboTranslate.setValue(null);
 		cboTranslate.getItems().clear();
 		if (verb.getTranslate() == null ) {
-			cboTranslate.getItems().addAll(question.getTranslateOps());
-			cboTranslate.setDisable(false);
+			cboTranslate.getItems().addAll(_question.getTranslateOps());
+			cboTranslate.setEditable(true);
 		} else {
 			cboTranslate.setValue(verb.getTranslate());
-			cboTranslate.setDisable(true);
+			cboTranslate.setEditable(false);
 		}
 		
 	}

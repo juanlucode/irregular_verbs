@@ -28,7 +28,7 @@ public class Question {
 		this.translateOps = ops;
 	}
 
-	Boolean isCorrect() {
+	boolean isCorrect() {
 		return verbOrigin.equals(verbResponse);
 	}
 

@@ -10,9 +10,12 @@ import javafx.scene.control.Label;
 
 public class ResultController extends Controller {
 
+	private QuestionaryResult questionaryResult;
+	
 	ResultController(MainAppFx _mainAppFx) {
 		super(_mainAppFx);
-		showResult(_mainAppFx.getTest().getQuestionary().check());
+		this.questionaryResult = _mainAppFx.getTest().getQuestionary().check();
+		
 	}
 
 	@FXML
@@ -38,13 +41,14 @@ public class ResultController extends Controller {
 		
 		btnNewTest.setOnAction(e -> {;});
 		btnExit.setOnAction(e -> {;});
+		showResult(questionaryResult);
 	}
 	
 	private void showResult(QuestionaryResult result) {
-		lblVerbsResult.setText(Integer.toString(result.getTotalVerbs()));
-		lblCorrectsResult.setText(Integer.toString(result.getCorrects()));
-		lblWrongsResult.setText(Integer.toString(result.getWrongs()));
-		lblPercentResult.setText(Float.toString(result.getPercent()));
+		lblVerbsResult.setText(String.valueOf(result.getTotalVerbs()));
+		lblCorrectsResult.setText(String.valueOf(result.getCorrects()));
+		lblWrongsResult.setText(String.valueOf(result.getWrongs()));
+		lblPercentResult.setText(String.valueOf(result.getPercent()));
 		
 	}
 
