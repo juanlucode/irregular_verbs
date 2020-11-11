@@ -9,6 +9,7 @@ import io.github.juanlucode.irregular_verbs.models.Verb;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
@@ -22,6 +23,12 @@ public class QuestionController extends Controller {
 		super(_mainAppFx);
 		this.test = _mainAppFx.getTest();
 	}
+	
+	@FXML
+	private Label lblQuestionNum;
+	
+	@FXML
+	private Label lblQuestionTotal;
 	
 	@FXML
 	private TextField txtInfinitive;
@@ -63,6 +70,8 @@ public class QuestionController extends Controller {
 		});		
 		
 		btnNext.setOnAction(e -> nextQuestion());
+		
+		lblQuestionTotal.setText(String.valueOf(this.test.getQuestionary().getQuestions().length));
 		this.nextQuestion();
 	}
 	
@@ -80,6 +89,7 @@ public class QuestionController extends Controller {
 	}
 
 	private void showQuestion(Question _question) {
+		lblQuestionNum.setText(String.valueOf(idxQuestion + 1));
 		Verb verb = _question.getVerbResponse();
 		txtInfinitive.setText(verb.getInfinitive());
 		txtInfinitive.setEditable(verb.getInfinitive() == null);
