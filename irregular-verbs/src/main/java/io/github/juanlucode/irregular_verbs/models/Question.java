@@ -8,7 +8,7 @@ public class Question {
 	private Verb verbResponse;
 	private String[] translateOps = null;
 
-	Verb getVerbOrigin() {
+	public Verb getVerbOrigin() {
 		return this.verbOrigin;
 	}
 	

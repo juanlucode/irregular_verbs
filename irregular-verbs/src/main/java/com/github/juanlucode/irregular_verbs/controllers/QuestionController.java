@@ -79,7 +79,7 @@ public class QuestionController extends Controller {
 		
 
 		idxQuestion++;
-		if ( idxQuestion == this.test.getQuestionary().getQuestions().length )
+		if ( idxQuestion >= this.test.getQuestionary().getQuestions().length )
 			this.getMainAppFx().toScene(View.RESULT);
 		else {
 			question = test.getQuestionary().getQuestions()[idxQuestion];

@@ -89,19 +89,19 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="lblRespPast" text="Label" />
                         <ImageView fx:id="imgRespPast" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="lblRespParticiple" text="Label" />
                         <ImageView fx:id="imgRespParticiple" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="lblRespTranslate" text="Label" />
                         <ImageView fx:id="imgRespTranslate" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
@@ -115,7 +115,12 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="btnRespBack" mnemonicParsing="false" text="&lt;" />
-                  <Button fx:id="imgRespForward" mnemonicParsing="false" text="&gt;" />
+                  <Label fx:id="lblQuestionId" alignment="CENTER" prefHeight="29.0" prefWidth="33.0" text="1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnRespForward" mnemonicParsing="false" text="&gt;" />
                </children>
             </HBox>
          </children>

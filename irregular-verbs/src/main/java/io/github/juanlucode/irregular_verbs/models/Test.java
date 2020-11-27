@@ -10,9 +10,10 @@ public class Test {
 	public Test(Level _level) {
 		this.level = _level;
 		this.repository = new Repository();
-		this.questionary = repository.generateQuestionary( (byte) 10, this.level);
+		this.questionary = repository.generateQuestionary( (byte) 3, this.level);
 	}
-
+	
+	
 	public Level getLevel() {
 		return level;
 	}
