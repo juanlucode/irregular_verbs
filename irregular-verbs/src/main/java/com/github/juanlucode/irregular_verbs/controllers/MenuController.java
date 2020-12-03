@@ -27,7 +27,7 @@ public class MenuController extends Controller {
 	private void initialize() {
 		btnEasy.setOnAction(e -> this.selectLevel(Level.LEVEL_LIGHT));
 		btnMedium.setOnAction(e -> this.selectLevel(Level.LEVEL_MEDIUM));
-		btnMedium.setOnAction(e -> this.selectLevel(Level.LEVEL_HARD));
+		btnHard.setOnAction(e -> this.selectLevel(Level.LEVEL_HARD));
 	}
 	
 	private void selectLevel(Level _level) {

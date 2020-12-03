@@ -1,8 +1,7 @@
 package com.github.juanlucode.irregular_verbs.controllers;
 
-import java.io.File;
-
 import com.github.juanlucode.irregular_verbs.front.MainAppFx;
+import com.github.juanlucode.irregular_verbs.front.View;
 
 import io.github.juanlucode.irregular_verbs.models.Question;
 import io.github.juanlucode.irregular_verbs.models.Questionary;
@@ -103,14 +102,14 @@ public class ResultController extends Controller {
 		);
 		
 		btnRespForward.setOnAction(e -> {
-				if (idQuestion < questionary.getQuestions().length) {
+				if (idQuestion < questionary.getQuestions().length - 1) {
 					showQuestion(++idQuestion);
 				}
 			}
 		);
 		
-		btnNewTest.setOnAction(e -> {;});
-		btnExit.setOnAction(e -> {;});
+		btnNewTest.setOnAction(e -> this.getMainAppFx().toScene(View.MENU));
+		btnExit.setOnAction(e -> System.exit(0));
 		showResult(questionaryResult);
 	}
 	
