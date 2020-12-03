@@ -6,6 +6,7 @@ import com.github.juanlucode.irregular_verbs.front.View;
 import io.github.juanlucode.irregular_verbs.models.Question;
 import io.github.juanlucode.irregular_verbs.models.Test;
 import io.github.juanlucode.irregular_verbs.models.Verb;
+import io.github.juanlucode.irregular_verbs.models.VerbForm;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -50,23 +51,23 @@ public class QuestionController extends Controller {
 		
 		// txtInfinitive onChange Event
 		txtInfinitive.textProperty().addListener((observable, oldValue, newValue) -> {
-			question.getVerbResponse().setInfinitive(newValue);
+			question.getVerbResponse().set(VerbForm.INFINITIVE, newValue);
 		});
 		
 		// txtPast onChange Event
 		txtPast.textProperty().addListener((observable, oldValue, newValue) -> {
-			question.getVerbResponse().setPast(newValue);
+			question.getVerbResponse().set(VerbForm.PAST, newValue);
 		});
 		
 		// txtParticiple onChange Event
 		txtParticiple.textProperty().addListener((observable, oldValue, newValue) -> {
-			question.getVerbResponse().setParticiple(newValue);
+			question.getVerbResponse().set(VerbForm.PARTICIPLE, newValue);
 		});
 		
 		// cboTranslate onChange Event
 		cboTranslate.valueProperty().addListener((observable, oldValue, newValue) -> {
 			if ( newValue != null )
-				question.getVerbResponse().setTranslate(newValue);
+				question.getVerbResponse().set(VerbForm.TRANSLATE, newValue);
 		});		
 		
 		btnNext.setOnAction(e -> nextQuestion());
@@ -91,20 +92,20 @@ public class QuestionController extends Controller {
 	private void showQuestion(Question _question) {
 		lblQuestionNum.setText(String.valueOf(idxQuestion + 1));
 		Verb verb = _question.getVerbResponse();
-		txtInfinitive.setText(verb.getInfinitive());
-		txtInfinitive.setEditable(verb.getInfinitive() == null);
-		txtPast.setText(verb.getPast());
-		txtPast.setEditable(verb.getPast() == null);
-		txtParticiple.setText(verb.getParticiple());
-		txtParticiple.setEditable(verb.getParticiple() == null);
+		txtInfinitive.setText(verb.get(VerbForm.INFINITIVE));
+		txtInfinitive.setEditable(verb.get(VerbForm.INFINITIVE) == null);
+		txtPast.setText(verb.get(VerbForm.PAST));
+		txtPast.setEditable(verb.get(VerbForm.PAST) == null);
+		txtParticiple.setText(verb.get(VerbForm.PARTICIPLE));
+		txtParticiple.setEditable(verb.get(VerbForm.PARTICIPLE) == null);
 		// show translate
 		cboTranslate.setValue(null);
 		cboTranslate.getItems().clear();
-		if (verb.getTranslate() == null ) {
+		if (verb.get(VerbForm.TRANSLATE) == null ) {
 			cboTranslate.getItems().addAll(_question.getTranslateOps());
 			cboTranslate.setEditable(true);
 		} else {
-			cboTranslate.setValue(verb.getTranslate());
+			cboTranslate.setValue(verb.get(VerbForm.TRANSLATE));
 			cboTranslate.setEditable(false);
 		}
 		

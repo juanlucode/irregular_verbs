@@ -23,38 +23,35 @@ public class Verb {
 		this.translate = translate;
 	}
 
-	public String getInfinitive() {
-		return infinitive;
-	}
+	public String get(VerbForm _verbForm) {
+		String value = switch( _verbForm ) {
+		case INFINITIVE -> this.infinitive;
+		case PAST -> this.past;
+		case PARTICIPLE -> this.participle;
+		case TRANSLATE -> this.translate;
 
-	public void setInfinitive(String infinitive) {
-		this.infinitive = infinitive;
+		};
+		
+		return (value == null)?null:value.toLowerCase().trim();
 	}
-
-	public String getPast() {
-		return past;
+	
+	public void set(VerbForm _verbForm, String _value) {
+		switch ( _verbForm ) {
+		case INFINITIVE: 
+			this.infinitive = _value;
+			break;
+		case PAST:
+			this.past = _value;
+			break;
+		case PARTICIPLE:
+			this.participle = _value;
+			break;
+		case TRANSLATE:
+			this.translate = _value;
+			break;
+		}
 	}
-
-	public void setPast(String past) {
-		this.past = past;
-	}
-
-	public String getParticiple() {
-		return participle;
-	}
-
-	public void setParticiple(String participle) {
-		this.participle = participle;
-	}
-
-	public String getTranslate() {
-		return translate;
-	}
-
-	public void setTranslate(String translate) {
-		this.translate = translate;
-	}
-
+	
 	public Verb generateQuestion(Level _level) {
 		// define the forms of verb which are visible at ramdom
 		
@@ -73,6 +70,21 @@ public class Verb {
 								form[3]?this.translate:null
 							);
 		
+	}
+	
+	public boolean equalForm(VerbForm _verbForm, Verb other) {
+
+		if (  this.get(_verbForm) == null) {
+			if ( other.get(_verbForm) == null )
+				return true;
+			else
+				return false;
+		} else {
+			if ( this.get(_verbForm).equals(other.get(_verbForm)) )
+				return true;
+			else 
+				return false;
+		}
 	}
 	
 	@Override
@@ -95,26 +107,11 @@ public class Verb {
 		if (getClass() != obj.getClass())
 			return false;
 		Verb other = (Verb) obj;
-		if (infinitive == null) {
-			if (other.infinitive != null)
+		
+		for ( VerbForm _verbForm : VerbForm.values() ) {
+			if ( ! this.equalForm(_verbForm, other)) 
 				return false;
-		} else if (!infinitive.equals(other.infinitive))
-			return false;
-		if (participle == null) {
-			if (other.participle != null)
-				return false;
-		} else if (!participle.equals(other.participle))
-			return false;
-		if (past == null) {
-			if (other.past != null)
-				return false;
-		} else if (!past.equals(other.past))
-			return false;
-		if (translate == null) {
-			if (other.translate != null)
-				return false;
-		} else if (!translate.equals(other.translate))
-			return false;
+		}
 		return true;
 	}
 

@@ -60,7 +60,7 @@ public class Repository {
 		// when translate field is null, we need to generate options
 		// for test question
 		for ( Question question : questionary.getQuestions() )
-			if ( question.getVerbResponse().getTranslate() == null )
+			if ( question.getVerbResponse().get(VerbForm.TRANSLATE) == null )
 				this.generateTranslateOps(question);
 		
 		return questionary; 
@@ -68,7 +68,7 @@ public class Repository {
 	
 	private void generateTranslateOps(Question question) {
 		// the correct opt put in last position
-		String[] ops = {null, null, null, question.getVerbOrigin().getTranslate()};
+		String[] ops = {null, null, null, question.getVerbOrigin().get(VerbForm.TRANSLATE)};
 		Random random = new Random();
 		boolean ok = true;
 		Verb randomVerb;
@@ -80,12 +80,12 @@ public class Repository {
 				else
 					if ( i > 0 )
 						for (int j = i - 1; j >= 0;j--)
-							if ( randomVerb.getTranslate().equals(ops[j]) ) {
+							if ( randomVerb.get(VerbForm.TRANSLATE).equals(ops[j]) ) {
 								ok = false;
 								break;
 							}
 			} while ( !ok );
-			ops[i] = randomVerb.getTranslate();
+			ops[i] = randomVerb.get(VerbForm.TRANSLATE);
 		}
 		// shuffle the array ops
 		question.setTranslateOps(ArrayTools.shuffleArray(ops));
