@@ -8,6 +8,7 @@ import io.github.juanlucode.irregular_verbs.models.Question;
 import io.github.juanlucode.irregular_verbs.models.Questionary;
 import io.github.juanlucode.irregular_verbs.models.QuestionaryResult;
 import io.github.juanlucode.irregular_verbs.models.Verb;
+import io.github.juanlucode.irregular_verbs.models.VerbForm;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -150,20 +151,37 @@ public class ResultController extends Controller {
 		lblQuestionId.setText(String.valueOf(id + 1));
 		
 		// infinitive
-		lblMasterInfinitive.setText(verbM.getInfinitive());
-		lblRespInfinitive.setText(verbR.getInfinitive());
+		lblMasterInfinitive.setText(verbM.get(VerbForm.INFINITIVE));
+		lblRespInfinitive.setText(verbR.get(VerbForm.INFINITIVE));
+		if ( verbM.equalForm(VerbForm.INFINITIVE, verbR) )
+			imgRespInfinitive.setImage(imgCorrect);
+		else
+			imgRespInfinitive.setImage(imgWrong);
 		
 		// past
-		lblMasterPast.setText(verbM.getPast());
-		lblRespPast.setText(verbR.getPast());
+		lblMasterPast.setText(verbM.get(VerbForm.PAST));
+		lblRespPast.setText(verbR.get(VerbForm.PAST));
+		if ( verbM.equalForm(VerbForm.PAST, verbR) )
+			imgRespPast.setImage(imgCorrect);
+		else
+			imgRespPast.setImage(imgWrong);
 		
 		// participle
-		lblMasterParticiple.setText(verbM.getParticiple());
-		lblRespParticiple.setText(verbR.getParticiple());
+		lblMasterParticiple.setText(verbM.get(VerbForm.PARTICIPLE));
+		lblRespParticiple.setText(verbR.get(VerbForm.PARTICIPLE));
+		if ( verbM.equalForm(VerbForm.PARTICIPLE, verbR) )
+			imgRespParticiple.setImage(imgCorrect);
+		else
+			imgRespParticiple.setImage(imgWrong);
+
 		
 		// translate
-		lblMasterTranslate.setText(verbM.getTranslate());
-		lblRespTranslate.setText(verbR.getTranslate());
+		lblMasterTranslate.setText(verbM.get(VerbForm.TRANSLATE));
+		lblRespTranslate.setText(verbR.get(VerbForm.TRANSLATE));
+		if ( verbM.equalForm(VerbForm.TRANSLATE, verbR) )
+			imgRespTranslate.setImage(imgCorrect);
+		else
+			imgRespTranslate.setImage(imgWrong);
 		
 	}
 

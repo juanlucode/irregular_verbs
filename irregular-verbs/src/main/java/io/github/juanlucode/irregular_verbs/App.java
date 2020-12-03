@@ -7,6 +7,7 @@ import io.github.juanlucode.irregular_verbs.models.Question;
 import io.github.juanlucode.irregular_verbs.models.Questionary;
 import io.github.juanlucode.irregular_verbs.models.Repository;
 import io.github.juanlucode.irregular_verbs.models.Verb;
+import io.github.juanlucode.irregular_verbs.models.VerbForm;
 
 /**
  * Hello world!
@@ -45,32 +46,32 @@ public class App {
     		System.out.println(verbAsked);
     		
     		// infinitive
-    		if ( verbAsked.getInfinitive() == null ) {
+    		if ( verbAsked.get(VerbForm.INFINITIVE) == null ) {
     			System.out.println("[Infinitive]: " );
-    			verbAsked.setInfinitive(scanner.next().toLowerCase().trim());
+    			verbAsked.set(VerbForm.INFINITIVE, scanner.next());
     		}
 
     		// past
-    		if ( verbAsked.getPast() == null ) {
+    		if ( verbAsked.get(VerbForm.PAST) == null ) {
     			System.out.println("[Past]: ");
-    			verbAsked.setPast(scanner.next().toLowerCase().trim());
+    			verbAsked.set( VerbForm.PAST, scanner.next());
     		}
     		
     		// participle
-       		if ( verbAsked.getParticiple() == null ) {
+       		if ( verbAsked.get(VerbForm.PARTICIPLE) == null ) {
     			System.out.println("[Participle]: ");
-    			verbAsked.setPast(scanner.next().toLowerCase().trim());
+    			verbAsked.set(VerbForm.PARTICIPLE, scanner.next());
     		}    	
        		
        		// translate
-       		if ( verbAsked.getTranslate() == null) {
+       		if ( verbAsked.get(VerbForm.TRANSLATE) == null) {
        			System.out.println("[Translate]: ");
        			byte i =  0;
        			for ( String opt : question.getTranslateOps() ) {
        				System.out.println(String.format(" [%d] - %s ", ++i, opt));
        			}
        			System.out.println("Write the correct option: ");
-       			verbAsked.setTranslate(question.getTranslateOps()[scanner.nextInt()-1]);
+       			verbAsked.set(VerbForm.TRANSLATE, question.getTranslateOps()[scanner.nextInt()-1]);
        		}
 
        			
