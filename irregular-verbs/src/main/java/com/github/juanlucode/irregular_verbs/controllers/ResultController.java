@@ -1,5 +1,7 @@
 package com.github.juanlucode.irregular_verbs.controllers;
 
+import java.io.File;
+
 import com.github.juanlucode.irregular_verbs.front.MainAppFx;
 
 import io.github.juanlucode.irregular_verbs.models.Question;
@@ -9,6 +11,7 @@ import io.github.juanlucode.irregular_verbs.models.Verb;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 
@@ -17,6 +20,8 @@ public class ResultController extends Controller {
 	private Questionary questionary;
 	private QuestionaryResult questionaryResult;
 	private int idQuestion = 0;
+	private Image imgCorrect = null;
+	private Image imgWrong = null;
 
 	@FXML
 	private Label lblVerbsResult;
@@ -85,6 +90,10 @@ public class ResultController extends Controller {
 	@FXML
 	private void initialize() {
 		
+        ClassLoader classLoader = getClass().getClassLoader();
+        imgCorrect = new Image(classLoader.getResourceAsStream("img/correct-icon.png"));
+		imgWrong = new Image(classLoader.getResourceAsStream("img/wrong-icon.png"));
+		
 		btnRespBack.setOnAction(e -> {
 				if (idQuestion != 0 ) {
 					showQuestion(--idQuestion);
@@ -130,10 +139,11 @@ public class ResultController extends Controller {
 	 * @param id
 	 */
 	private void showQuestion(int id) {
+		Question question = questionary.getQuestions()[id];
 		// verb master
-		Verb verbM = questionary.getQuestions()[id].getVerbOrigin();
+		Verb verbM = question.getVerbOrigin();
 		// verb response
-		Verb verbR = questionary.getQuestions()[id].getVerbResponse();
+		Verb verbR = question.getVerbResponse();
 		
 
 		 
