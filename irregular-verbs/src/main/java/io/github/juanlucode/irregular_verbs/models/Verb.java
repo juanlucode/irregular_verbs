@@ -52,26 +52,7 @@ public class Verb {
 		}
 	}
 	
-	public Verb generateQuestion(Level _level) {
-		// define the forms of verb which are visible at ramdom
-		
-		Boolean[] form = {true,true,true,true};
-		for (int i = 0; i <= _level.ordinal(); i++)
-			form[i] = false;
-		
-		// mix the array
-		form = ArrayTools.shuffleArray(form);
-		
-		// return new incomplete verb
-		return new Verb(
-								form[0]?this.infinitive:null,
-								form[1]?this.past:null,
-								form[2]?this.participle:null,
-								form[3]?this.translate:null
-							);
-		
-	}
-	
+
 	public boolean equalForm(VerbForm _verbForm, Verb other) {
 
 		if (  this.get(_verbForm) == null) {

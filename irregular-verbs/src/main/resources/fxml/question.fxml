@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -19,37 +19,37 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label text="Infinitive" />
-                  <HBox prefHeight="82.0" prefWidth="116.0">
+                  <HBox prefHeight="82.0" prefWidth="200.0">
                      <children>
                         <Label prefHeight="18.0" prefWidth="57.0" text="To">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="txtInfinitive" prefHeight="28.0" prefWidth="107.0" />
+                        <TextField fx:id="txtInfinitive" prefHeight="28.0" prefWidth="208.0" />
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label text="Past" />
                   <TextField fx:id="txtPast" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label text="Participle" />
                   <TextField fx:id="txtParticiple" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label text="Translate" />
-                  <ComboBox fx:id="cboTranslate" prefWidth="150.0" />
+                  <ComboBox fx:id="cboTranslate" prefHeight="28.0" prefWidth="203.0" />
                </children>
             </VBox>
          </children>

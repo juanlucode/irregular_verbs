@@ -152,36 +152,46 @@ public class ResultController extends Controller {
 		// infinitive
 		lblMasterInfinitive.setText(verbM.get(VerbForm.INFINITIVE));
 		lblRespInfinitive.setText(verbR.get(VerbForm.INFINITIVE));
-		if ( verbM.equalForm(VerbForm.INFINITIVE, verbR) )
-			imgRespInfinitive.setImage(imgCorrect);
+		if ( question.getFlags()[0])
+			if ( verbM.equalForm(VerbForm.INFINITIVE, verbR) )
+				imgRespInfinitive.setImage(imgCorrect);
+			else
+				imgRespInfinitive.setImage(imgWrong);
 		else
-			imgRespInfinitive.setImage(imgWrong);
+			imgRespInfinitive.setImage(null);
 		
 		// past
 		lblMasterPast.setText(verbM.get(VerbForm.PAST));
 		lblRespPast.setText(verbR.get(VerbForm.PAST));
-		if ( verbM.equalForm(VerbForm.PAST, verbR) )
-			imgRespPast.setImage(imgCorrect);
+		if ( question.getFlags()[1])
+			if ( verbM.equalForm(VerbForm.PAST, verbR) )
+				imgRespPast.setImage(imgCorrect);
+			else
+				imgRespPast.setImage(imgWrong);
 		else
-			imgRespPast.setImage(imgWrong);
+			imgRespPast.setImage(null);
 		
 		// participle
 		lblMasterParticiple.setText(verbM.get(VerbForm.PARTICIPLE));
 		lblRespParticiple.setText(verbR.get(VerbForm.PARTICIPLE));
-		if ( verbM.equalForm(VerbForm.PARTICIPLE, verbR) )
-			imgRespParticiple.setImage(imgCorrect);
+		if ( question.getFlags()[2])
+			if ( verbM.equalForm(VerbForm.PARTICIPLE, verbR) )
+				imgRespParticiple.setImage(imgCorrect);
+			else
+				imgRespParticiple.setImage(imgWrong);
 		else
-			imgRespParticiple.setImage(imgWrong);
-
+			imgRespParticiple.setImage(null);
 		
 		// translate
 		lblMasterTranslate.setText(verbM.get(VerbForm.TRANSLATE));
 		lblRespTranslate.setText(verbR.get(VerbForm.TRANSLATE));
-		if ( verbM.equalForm(VerbForm.TRANSLATE, verbR) )
-			imgRespTranslate.setImage(imgCorrect);
+		if ( question.getFlags()[3])
+			if ( verbM.equalForm(VerbForm.TRANSLATE, verbR) )
+				imgRespTranslate.setImage(imgCorrect);
+			else
+				imgRespTranslate.setImage(imgWrong);
 		else
-			imgRespTranslate.setImage(imgWrong);
-		
+			imgRespTranslate.setImage(null);
 	}
 
 }
