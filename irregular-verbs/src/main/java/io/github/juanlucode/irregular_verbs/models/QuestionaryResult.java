@@ -36,9 +36,12 @@ public final class QuestionaryResult {
 	 * @return
 	 */
 	public float getPercent() {
-		return (float) this.corrects / this.totalVerbs;
+		return getCoeficient() * 100;
 	}
 	
+	public float getCoeficient() {
+		return (float) this.corrects / this.totalVerbs;
+	}
 	
 	/**
 	 * Questionary Result Constructor
