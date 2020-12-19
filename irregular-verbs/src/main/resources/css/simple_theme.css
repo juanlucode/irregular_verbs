@@ -1,0 +1,104 @@
+.background-scene {
+    -fx-background-color: white;   
+    -fx-pref-width: 1280;
+    -fx-pref-height: 720;
+    
+}
+
+.button {
+    -fx-background-radius: 45;
+    -fx-background-color: #729fcf;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 14pt;
+    -fx-font-weight: Bold;
+    -fx-text-fill: white;
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: #3465a4; 
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: #204a87;
+}
+
+.button:focused {
+    -fx-border-color: black;
+    -fx-border-width: 3;
+    -fx-border-radius: 45;
+    -fx-border-style: solid, segments(1, 1);
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+}
+
+.button-nav {
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;	
+}
+
+.text-field-question {
+	-fx-border-color: #729fcf;
+  	-fx-border-width: 0 0 1 0; /* top, right, bottom, left */
+  	-fx-background-color: transparent;
+  	-fx-font-size: 14pt;
+	-fx-font-weight: Bold;
+	-fx-text-fill : #2a1fe8;
+
+}
+
+.text-field-question:focused {
+	-fx-border-width: 0 0 4 0; /* top, right, bottom, left */
+}
+
+.text-field-question:disabled {
+	-fx-opacity: 1.0;
+	-fx-text-fill: brown;
+}
+
+.combo-box-question {
+	-fx-border-color: #729fcf;
+  	-fx-border-width: 0 0 1 0; /* top, right, bottom, left */
+  	-fx-background-color: transparent;
+  	-fx-font-size: 14pt;
+	-fx-font-weight: Bold;
+	-fx-text-fill : #2a1fe8;
+}
+
+.combo-box-question:disabled {
+	-fx-opacity: 1.0;
+	-fx-text-fill: brown;	
+}
+
+.arrow {
+	-fx-opacity: 1.0;
+	-fx-border-color: 	#729fcf;
+}
+
+.arrow:disabled {
+	-fx-opacity: 0.0;
+	-fx-text-fill: brown;
+}
+
+.label {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 14pt;
+    -fx-font-weight: Bold;
+    -fx-text-fill: black;	
+}
+
+.label-header {
+	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 30pt;
+    -fx-font-weight: Bold;
+    -fx-text-fill: #729fcf;
+}
+
+

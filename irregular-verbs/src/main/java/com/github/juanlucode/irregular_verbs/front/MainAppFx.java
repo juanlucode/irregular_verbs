@@ -4,6 +4,7 @@
 package com.github.juanlucode.irregular_verbs.front;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -90,6 +91,7 @@ public class MainAppFx extends Application implements AppManagement{
 	public void toScene(View _view) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/" + _view.getFxml()));
+     
         //loader.setResources(I18N.getInstance().getResourceBundle());
         Controller controller = ControllerFactory.get(this, _view);
         
@@ -101,6 +103,12 @@ public class MainAppFx extends Application implements AppManagement{
 			e.printStackTrace();
 		}
         Scene scene = new Scene(root);
+        
+        // Set Stylesheet
+        URL url = this.getClass().getResource("/css/simple_theme.css");
+
+        String css = url.toExternalForm(); 
+        scene.getStylesheets().add(css);        
        
       
         this.stage.setScene(scene);
