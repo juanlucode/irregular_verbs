@@ -130,8 +130,6 @@ public class QuestionController extends Controller {
 	}
 
 	private void showQuestion(Question _question) {
-		System.out.println(_question);
-		System.out.println(_question.getFlags()[3]);
 		
 		lblQuestionNum.setText(String.valueOf(idxQuestion + 1));
 		Verb verb = _question.getVerbResponse();

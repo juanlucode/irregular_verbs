@@ -94,6 +94,14 @@
     -fx-text-fill: black;	
 }
 
+.label-result-ok {
+	-fx-text-fill: green;	
+}
+
+.label-result-fail{
+	-fx-text-fill: red;	
+}
+
 .label-header {
 	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 30pt;
