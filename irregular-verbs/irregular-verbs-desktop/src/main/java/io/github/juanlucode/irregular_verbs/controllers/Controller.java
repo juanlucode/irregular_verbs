@@ -1,6 +1,6 @@
-package com.github.juanlucode.irregular_verbs.controllers;
+package io.github.juanlucode.irregular_verbs.controllers;
 
-import com.github.juanlucode.irregular_verbs.front.MainAppFx;
+import io.github.juanlucode.irregular_verbs.front.MainAppFx;
 
 /**
  * Controller

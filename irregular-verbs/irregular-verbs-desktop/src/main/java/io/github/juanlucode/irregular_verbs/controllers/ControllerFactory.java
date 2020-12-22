@@ -1,7 +1,7 @@
-package com.github.juanlucode.irregular_verbs.controllers;
+package io.github.juanlucode.irregular_verbs.controllers;
 
-import com.github.juanlucode.irregular_verbs.front.MainAppFx;
-import com.github.juanlucode.irregular_verbs.front.View;
+import io.github.juanlucode.irregular_verbs.front.MainAppFx;
+import io.github.juanlucode.irregular_verbs.front.View;
 
 /**
  * Factory Pattern to get controllers
