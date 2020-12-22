@@ -1,16 +1,15 @@
 /**
  * 
  */
-package com.github.juanlucode.irregular_verbs.front;
+package io.github.juanlucode.irregular_verbs.front;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import com.github.juanlucode.irregular_verbs.controllers.Controller;
-import com.github.juanlucode.irregular_verbs.controllers.ControllerFactory;
-
+import io.github.juanlucode.irregular_verbs.controllers.Controller;
+import io.github.juanlucode.irregular_verbs.controllers.ControllerFactory;
 import io.github.juanlucode.irregular_verbs.models.Level;
 import io.github.juanlucode.irregular_verbs.models.Test;
 

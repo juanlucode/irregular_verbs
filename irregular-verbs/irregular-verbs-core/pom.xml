@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
     <parent>
-		<groupId>com.github.juanlucode</groupId>
+		<groupId>io.github.juanlucode</groupId>
 		<artifactId>irregular-verbs</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
     
 	<groupId>io.github.juanlucode</groupId>
 	<artifactId>irregular-verbs-core</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>irregular-verbs</name>

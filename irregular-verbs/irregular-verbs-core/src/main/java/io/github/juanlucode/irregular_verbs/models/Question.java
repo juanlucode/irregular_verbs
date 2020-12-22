@@ -2,7 +2,7 @@ package io.github.juanlucode.irregular_verbs.models;
 
 import java.util.Arrays;
 
-import com.github.juanlucode.commons.ArrayTools;
+import io.github.juanlucode.commons.ArrayTools;
 
 /**
  * Describes a question.

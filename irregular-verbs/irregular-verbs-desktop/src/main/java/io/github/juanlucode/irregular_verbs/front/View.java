@@ -1,4 +1,4 @@
-package com.github.juanlucode.irregular_verbs.front;
+package io.github.juanlucode.irregular_verbs.front;
 
 /**
  * View

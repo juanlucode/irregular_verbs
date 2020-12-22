@@ -1,6 +1,6 @@
 package io.github.juanlucode.irregular_verbs.models;
 
-import com.github.juanlucode.commons.ArrayTools;
+import io.github.juanlucode.commons.ArrayTools;
 
 public class Verb {
 	private String infinitive = null;

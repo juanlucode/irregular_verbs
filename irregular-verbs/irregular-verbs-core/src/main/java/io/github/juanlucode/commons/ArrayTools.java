@@ -1,4 +1,4 @@
-package com.github.juanlucode.commons;
+package io.github.juanlucode.commons;
 
 import java.util.Random;
 

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import io.github.juanlucode.irregular_verbs.models.Level;
-import io.github.juanlucode.irregular_verbs.models.Question;
 import io.github.juanlucode.irregular_verbs.models.Questionary;
 import io.github.juanlucode.irregular_verbs.models.Repository;
 
@@ -34,7 +33,7 @@ class GeneralTest {
 	@DisplayName("Testing questionary creation")
 	void testQuestionary() {
 		this.repository = new Repository();
-		System.out.println(this.repository.size());
+		// System.out.println(this.repository.size());
 		this.questionary = this.repository.generateQuestionary((byte) 10, Level.LEVEL_HARD);
 		
 		// amont of questions
@@ -45,11 +44,13 @@ class GeneralTest {
 		assertEquals(0, questionaryResult.getCorrects());
 		assertEquals(0.0f, questionaryResult.getPercent() );
 		
+		/*
 		for ( Question question : questionary.getQuestions() ) {
 			
 			System.out.println(question);
 
 		}
+		*/
 	}
 	
 }
