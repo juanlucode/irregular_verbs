@@ -6,7 +6,9 @@ package io.github.juanlucode.irregular_verbs_desktop.front;
 import java.io.IOException;
 import java.net.URL;
 
-import io.github.juanlucode.irregular_verbs.models.Test;
+
+
+import io.github.juanlucode.irregular_verbs_core.models.Test;
 import io.github.juanlucode.irregular_verbs_desktop.controllers.Controller;
 import io.github.juanlucode.irregular_verbs_desktop.controllers.ControllerFactory;
 

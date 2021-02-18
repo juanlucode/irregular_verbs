@@ -1,7 +1,8 @@
 package io.github.juanlucode.irregular_verbs_desktop.controllers;
 
-import io.github.juanlucode.irregular_verbs.models.Level;
-import io.github.juanlucode.irregular_verbs.models.Test;
+
+import io.github.juanlucode.irregular_verbs_core.models.Level;
+import io.github.juanlucode.irregular_verbs_core.models.Test;
 import io.github.juanlucode.irregular_verbs_desktop.front.MainAppFx;
 import io.github.juanlucode.irregular_verbs_desktop.front.View;
 import javafx.fxml.FXML;

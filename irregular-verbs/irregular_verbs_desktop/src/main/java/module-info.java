@@ -4,10 +4,11 @@ module irregular_verbs_desktop_module {
 	requires javafx.controls;
 	requires javafx.fxml;
 	
-	requires irregular_verbs_core_module;
+	requires transitive irregular_verbs_core_module;
+        
 	
 	opens io.github.juanlucode.irregular_verbs_desktop.front to javafx.fxml;
-	opens io.github.juanlucode.irregular_verbs_desktop.controllers to io.github.juanlucode.modules.irregular_verbs_core;
+	opens io.github.juanlucode.irregular_verbs_desktop.controllers to javafx.fxml;
 	exports io.github.juanlucode.irregular_verbs_desktop.front;
 	exports io.github.juanlucode.irregular_verbs_desktop.controllers;
 	

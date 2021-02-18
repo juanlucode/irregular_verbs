@@ -1,10 +1,10 @@
 package io.github.juanlucode.irregular_verbs_desktop.controllers;
 
-import io.github.juanlucode.irregular_verbs.models.Question;
-import io.github.juanlucode.irregular_verbs.models.Questionary;
-import io.github.juanlucode.irregular_verbs.models.QuestionaryResult;
-import io.github.juanlucode.irregular_verbs.models.Verb;
-import io.github.juanlucode.irregular_verbs.models.VerbForm;
+import io.github.juanlucode.irregular_verbs_core.models.Question;
+import io.github.juanlucode.irregular_verbs_core.models.Questionary;
+import io.github.juanlucode.irregular_verbs_core.models.QuestionaryResult;
+import io.github.juanlucode.irregular_verbs_core.models.Verb;
+import io.github.juanlucode.irregular_verbs_core.models.VerbForm;
 import io.github.juanlucode.irregular_verbs_desktop.front.MainAppFx;
 import io.github.juanlucode.irregular_verbs_desktop.front.View;
 import javafx.fxml.FXML;
