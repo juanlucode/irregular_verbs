@@ -13,7 +13,7 @@
 	<modules>
 		<module>irregular_verbs_core</module>
 		<module>irregular_verbs_desktop</module>
-		<module>irregular_verbs_jlink</module>
+		
 	</modules>
 
 	<properties>

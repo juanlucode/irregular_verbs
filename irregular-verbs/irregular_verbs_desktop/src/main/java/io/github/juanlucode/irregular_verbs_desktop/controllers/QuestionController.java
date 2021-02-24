@@ -165,13 +165,22 @@ public class QuestionController extends Controller {
     
     private void setFocusFrom( Node ctrl) {
     	do {
-        	ctrl = switch(ctrl.getId()) {
+        	switch(ctrl.getId()) {
         	
-        		case "txtInfinitive" -> txtPast;
-        		case "txtPast" -> txtParticiple;
-        		case "txtParticiple" -> cboTranslate;
-        		case "cboTranslate" -> btnNext;
-        		default -> txtInfinitive;
+        		case "txtInfinitive": 
+        			ctrl = txtPast;
+        			break;
+        		case "txtPast":
+        			ctrl = txtParticiple;
+        			break;
+        		case "txtParticiple":
+        			ctrl = cboTranslate;
+        			break;
+        		case "cboTranslate":
+        			ctrl = btnNext;
+        			break;
+        		default: 
+        			ctrl = txtInfinitive;
         	};
     	} while (ctrl.isDisable());
     	ctrl.requestFocus();   	
