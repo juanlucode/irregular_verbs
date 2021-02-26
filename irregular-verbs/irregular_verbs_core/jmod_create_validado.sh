@@ -1,0 +1,3 @@
+jmod create --module-version 1.0-SNAPSHOT --class-path /home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/classes:/home/juanlucode/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar --module-path "/home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/classes:/home/juanlucode/.m2/repository/com/google/code/gson/gson/2.8.6:/usr/lib/jvm/java-14-openjdk-amd64/jmods" /home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/jmods/irregular_verbs_core.jmod
+
+mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=irregular_verbs_core.jmod -DgroupId=io.github.juanlucode -DartifactId=irregular_verbs_core -Dversion=1.0-SNAPSHOT -Dpackaging=jmod
