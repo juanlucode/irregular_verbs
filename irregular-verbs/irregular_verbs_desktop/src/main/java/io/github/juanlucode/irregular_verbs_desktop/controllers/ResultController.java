@@ -1,5 +1,8 @@
 package io.github.juanlucode.irregular_verbs_desktop.controllers;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import io.github.juanlucode.irregular_verbs_core.models.Question;
 import io.github.juanlucode.irregular_verbs_core.models.Questionary;
 import io.github.juanlucode.irregular_verbs_core.models.QuestionaryResult;
@@ -90,9 +93,29 @@ public class ResultController extends Controller {
 	@FXML
 	private void initialize() {
 		
-        ClassLoader classLoader = getClass().getClassLoader();
-        imgCorrect = new Image(classLoader.getResourceAsStream("img/correct-icon.png"));
-		imgWrong = new Image(classLoader.getResourceAsStream("img/wrong-icon.png"));
+		/*
+		 
+		//ClassLoader classLoader = getClass().getClassLoader();
+		
+		Module module = getClass().getModule();
+
+		// try (InputStream inputStream =
+		// classLoader.getResourceAsStream("repo/irregular_verbs.json")){
+		try (InputStream inputStream = module.getResourceAsStream("repo/irregular_verbs.json")) {
+		 
+		 */
+		
+        //ClassLoader classLoader = getClass().getClassLoader();
+		
+		Module module = getClass().getModule();
+		
+        try {
+			imgCorrect = new Image(module.getResourceAsStream("img/correct-icon.png"));
+			imgWrong = new Image(module.getResourceAsStream("img/wrong-icon.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		
 		btnRespBack.setOnAction(e -> {
 				if (idQuestion != 0 ) {

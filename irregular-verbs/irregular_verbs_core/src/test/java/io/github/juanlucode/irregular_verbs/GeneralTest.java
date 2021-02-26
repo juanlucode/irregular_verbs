@@ -33,7 +33,6 @@ class GeneralTest {
 	@DisplayName("Testing questionary creation")
 	void testQuestionary() {
 		this.repository = new Repository();
-		// System.out.println(this.repository.size());
 		this.questionary = this.repository.generateQuestionary((byte) 10, Level.LEVEL_HARD);
 		
 		// amont of questions
