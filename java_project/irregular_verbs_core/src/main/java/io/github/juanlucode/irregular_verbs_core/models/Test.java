@@ -1,5 +1,9 @@
 package io.github.juanlucode.irregular_verbs_core.models;
-
+/**
+ * Describes a simple test, with its level and set of questions. implements on singleton pattern because there have to be one test object at once.
+ * @author juanlucode
+ *
+ */
 
 public class Test {
 	private Level level;

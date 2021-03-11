@@ -5,20 +5,9 @@ package io.github.juanlucode.irregular_verbs_desktop.front;
 
 import java.io.IOException;
 import java.net.URL;
-
-
-
 import io.github.juanlucode.irregular_verbs_core.models.Test;
 import io.github.juanlucode.irregular_verbs_desktop.controllers.Controller;
 import io.github.juanlucode.irregular_verbs_desktop.controllers.ControllerFactory;
-
-//import com.github.juanlucode.defutbol_app.i18n.I18N;
-
-//import java.io.IOException;
-
-//import com.github.juanlucode.defutbol_app.controllers.Controller;
-//import com.github.juanlucode.defutbol_app.controllers.RootController;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
