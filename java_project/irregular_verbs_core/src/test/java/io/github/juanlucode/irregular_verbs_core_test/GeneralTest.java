@@ -1,4 +1,4 @@
-package io.github.juanlucode.irregular_verbs;
+package io.github.juanlucode.irregular_verbs_core_test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
