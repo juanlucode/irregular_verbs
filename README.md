@@ -36,3 +36,5 @@ options:
 --linux-shortcut or --win-shortcut
 
 --win-menu --win-menu-group or --linux-menu-group
+
+--win-dir-chooser 
