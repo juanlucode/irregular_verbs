@@ -1,10 +1,8 @@
 package io.github.juanlucode.iverbscore.models;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -106,8 +104,9 @@ public class Repository {
 
 		// try (InputStream inputStream =
 		// classLoader.getResourceAsStream("repo/irregular_verbs.json")){
-		try (InputStream inputStream = module.getResourceAsStream("repo/irregular_verbs.json")) {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+		// try (InputStream inputStream = module.getResourceAsStream("repo/irregular_verbs.json")) {
+		try (InputStream inputStream = new FileInputStream("iverbscore/repo/irregular_verbs.json")) {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
 			Type listType = new TypeToken<List<Verb>>() {
 			}.getType();
 			// Convert JSON File to List Java Object
