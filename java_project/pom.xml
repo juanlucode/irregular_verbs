@@ -10,12 +10,12 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
         
-        <name>iverbs</name>
+	<name>iverbs</name>
 
 	<modules>
-		<module>iverbscore</module>
-		<module>iverbsdesktop</module>
-		
+		<module>iverbs-core</module>
+		<module>iverbs-desktop</module>
+		<module>iverbs-tests</module>
 	</modules>
 
 	<properties>

@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="iverbsdesktop" />
-        <module name="iverbscore" />
+        <module name="iverbs-desktop" />
+        <module name="iverbs-tests" />
+        <module name="iverbs-core" />
       </profile>
     </annotationProcessing>
   </component>
