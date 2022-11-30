@@ -1,11 +1,11 @@
 package io.github.iverbs.core.model.business;
 
-import io.github.iverbs.core.model.QuestionaryResult;
+import io.github.iverbs.core.model.value.QuestionaryResultVO;
 import io.github.iverbs.core.model.value.QuestionVO;
 
 public class QuestionaryBO {
 
-    public static QuestionaryResult check(QuestionVO[] _questions) {
+    public static QuestionaryResultVO check(QuestionVO[] _questions) {
         var total = 0;
         var correct = 0;
         for ( QuestionVO questionVO : _questions ) {
@@ -13,7 +13,7 @@ public class QuestionaryBO {
             if ( questionVO.isCorrect() )
                 correct++;
         }
-        return new QuestionaryResult(total, correct);
+        return new QuestionaryResultVO(total, correct);
 
     }
 }

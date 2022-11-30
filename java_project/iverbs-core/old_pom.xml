@@ -87,8 +87,8 @@
 				<extensions>true</extensions>
 				<configuration>
 					<moduleVersion>${version}</moduleVersion>
-					<classPath>/home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/classes:/home/juanlucode/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar</classPath>
-					<modulePath>/home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/classes:/home/juanlucode/.m2/repository/com/google/code/gson/gson/2.8.6:/usr/lib/jvm/java-14-openjdk-amd64/jmods</modulePath>
+					<classPath>/home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/classes:/home/juanlucode/.m2/repositoryVO/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar</classPath>
+					<modulePath>/home/juanlucode/Proyectos/irregular_verbs/irregular-verbs/irregular_verbs_core/target/classes:/home/juanlucode/.m2/repositoryVO/com/google/code/gson/gson/2.8.6:/usr/lib/jvm/java-14-openjdk-amd64/jmods</modulePath>
 				</configuration>
 				<dependencies>
 					<dependency>

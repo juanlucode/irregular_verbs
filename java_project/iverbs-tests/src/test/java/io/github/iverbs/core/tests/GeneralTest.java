@@ -2,7 +2,9 @@ package io.github.iverbs.core.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import io.github.iverbs.core.model.Repository;
+import io.github.iverbs.core.model.business.QuestionaryBO;
+import io.github.iverbs.core.model.business.RepositoryBO;
+import io.github.iverbs.core.model.value.RepositoryVO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -15,31 +17,31 @@ import io.github.iverbs.core.model.value.QuestionaryVO;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GeneralTest {
 
-	private Repository repository =  null;
+	private RepositoryVO repositoryVO =  null;
 	private QuestionaryVO questionaryVO = null;
 	
 	@Test
 	@Order(1)
-	@DisplayName("Testing repository creation")
+	@DisplayName("Testing repositoryVO creation")
 	void testRepository() {
 		
-		this.repository = new Repository();
+		this.repositoryVO = new RepositoryVO();
 		
-		assertNotEquals(0, this.repository.size()); 
+		assertNotEquals(0, this.repositoryVO.size());
 	}
 
 	@Test
 	@Order(2)
 	@DisplayName("Testing questionaryVO creation")
 	void testQuestionary() {
-		this.repository = new Repository();
-		this.questionaryVO = this.repository.generateQuestionary((byte) 10, Level.LEVEL_HARD);
+		this.repositoryVO = new RepositoryVO();
+		this.questionaryVO = RepositoryBO.generateQuestionary( this.repositoryVO.getVerbList() ,(byte) 10, Level.LEVEL_HARD);
 		
 		// amont of questions
 		assertEquals(10, questionaryVO.getQuestions().length);
 		
 		// all questions are unsolved yet.
-		var questionaryResult = questionaryVO.check();
+		var questionaryResult = QuestionaryBO.check(questionaryVO.getQuestions());
 		assertEquals(0, questionaryResult.getCorrects());
 		assertEquals(0.0f, questionaryResult.getPercent() );
 		

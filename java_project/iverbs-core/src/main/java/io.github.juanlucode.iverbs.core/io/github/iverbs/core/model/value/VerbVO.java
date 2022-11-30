@@ -1,8 +1,8 @@
-package io.github.iverbs.core.model;
+package io.github.iverbs.core.model.value;
 
 import io.github.iverbs.core.model.enumeration.VerbForm;
 
-public class Verb {
+public class VerbVO {
 	private String infinitive = null;
 	private String past = null;
 	private String participle = null;
@@ -16,7 +16,7 @@ public class Verb {
 	 * @param participle
 	 * @param translate
 	 */
-	public Verb(String infinitive, String past, String participle, String translate) {
+	public VerbVO(String infinitive, String past, String participle, String translate) {
 		super();
 		this.infinitive = infinitive;
 		this.past = past;
@@ -62,7 +62,7 @@ public class Verb {
 		}
 	}
 
-	public boolean equalForm(VerbForm _verbForm, Verb other) {
+	public boolean equalForm(VerbForm _verbForm, VerbVO other) {
 
 		if (this.get(_verbForm) == null) {
 			if (other.get(_verbForm) == null)
@@ -96,7 +96,7 @@ public class Verb {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Verb other = (Verb) obj;
+		VerbVO other = (VerbVO) obj;
 
 		for (VerbForm _verbForm : VerbForm.values()) {
 			if (!this.equalForm(_verbForm, other))
@@ -107,7 +107,7 @@ public class Verb {
 
 	@Override
 	public String toString() {
-		return "Verb [infinitive=" + infinitive + ", past=" + past + ", participle=" + participle + ", translate="
+		return "VerbVO [infinitive=" + infinitive + ", past=" + past + ", participle=" + participle + ", translate="
 				+ translate + "]";
 	}
 

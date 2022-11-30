@@ -3,7 +3,6 @@ package io.github.iverbs.core.model.value;
 import java.util.Arrays;
 
 import io.github.iverbs.commons.ArrayTools;
-import io.github.iverbs.core.model.Verb;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.enumeration.VerbForm;
 
@@ -14,8 +13,8 @@ import io.github.iverbs.core.model.enumeration.VerbForm;
  */
 public class QuestionVO {
 
-	private Verb verbOrigin;
-	private Verb verbResponse;
+	private VerbVO verbOrigin;
+	private VerbVO verbResponse;
 	private Level level;
 	private Boolean[] flags = {false,false,false,false};
 	private String[] translateOps = null;
@@ -24,7 +23,7 @@ public class QuestionVO {
 	 * Get the origin verb of the question
 	 * @return
 	 */
-	public Verb getVerbOrigin() {
+	public VerbVO getVerbOrigin() {
 		return this.verbOrigin;
 	}
 	
@@ -32,7 +31,7 @@ public class QuestionVO {
 	 * Get the incomplete verb the user must complete
 	 * @return
 	 */
-	public Verb getVerbResponse() {
+	public VerbVO getVerbResponse() {
 		return this.verbResponse;
 	}
 
@@ -40,7 +39,7 @@ public class QuestionVO {
 	 * Set the incomplete verb the user must complete
 	 * @return
 	 */
-	void setVerbResponse(Verb verbResponse) {
+	void setVerbResponse(VerbVO verbResponse) {
 		this.verbResponse = verbResponse;
 	}
 	
@@ -79,8 +78,8 @@ public class QuestionVO {
 	 * Set the options for the translate question.
 	 * The translate form of the verb have a test question format with 4 possible options.
 	 * @return
-	 */	
-	void setTranslateOps(String[] ops) {
+	 */
+	public void setTranslateOps(String[] ops) {
 		this.translateOps = ops;
 	}
 
@@ -94,11 +93,11 @@ public class QuestionVO {
 
 	/**
 	 * QuestionVO construct
-	 * @param _verb Original verb to make a question
+	 * @param _verbVO Original verb to make a question
 	 * @param _level Level of the question (amount of forms hidden)
 	 */
-	public QuestionVO(Verb _verb, Level _level) {
-		this.verbOrigin = _verb;
+	public QuestionVO(VerbVO _verbVO, Level _level) {
+		this.verbOrigin = _verbVO;
 		this.level = _level;
 		this.generateQuestion();
 	}
@@ -116,7 +115,7 @@ public class QuestionVO {
 		flags = ArrayTools.shuffleArray(flags);
 
 		// return new incomplete verb
-		this.verbResponse = new Verb(
+		this.verbResponse = new VerbVO(
 							 	flags[0]?null:verbOrigin.get(VerbForm.INFINITIVE),
 							 	flags[1]?null:verbOrigin.get(VerbForm.PAST),
 							 	flags[2]?null:verbOrigin.get(VerbForm.PARTICIPLE),

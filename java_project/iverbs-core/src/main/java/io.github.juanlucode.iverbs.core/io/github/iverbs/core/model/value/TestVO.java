@@ -1,7 +1,9 @@
-package io.github.iverbs.core.model;
+package io.github.iverbs.core.model.value;
 
+import io.github.iverbs.core.model.business.RepositoryBO;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.value.QuestionaryVO;
+import io.github.iverbs.core.model.value.RepositoryVO;
 
 /**
  * Describes a simple test, with its level and set of questions. implements on singleton pattern because there have to be one test object at once.
@@ -9,16 +11,16 @@ import io.github.iverbs.core.model.value.QuestionaryVO;
  *
  */
 
-public class Test {
+public class TestVO {
 	private Level level;
-	private Repository repository;
+	private RepositoryVO repositoryVO;
 	private QuestionaryVO questionaryVO;
 	
 	// Constructor
-	public Test(Level _level) {
+	public TestVO(Level _level) {
 		this.level = _level;
-		this.repository = new Repository();
-		this.questionaryVO = repository.generateQuestionary( (byte) 10, this.level);
+		this.repositoryVO = new RepositoryVO();
+		this.questionaryVO = RepositoryBO.generateQuestionary(this.repositoryVO.getVerbList (), (byte) 10, this.level);
 	}
 	
 	
@@ -32,10 +34,6 @@ public class Test {
 
 	public QuestionaryVO getQuestionary() {
 		return questionaryVO;
-	}
-
-	public void setQuestionary(QuestionaryVO questionaryVO) {
-		this.questionaryVO = questionaryVO;
 	}
 
 }

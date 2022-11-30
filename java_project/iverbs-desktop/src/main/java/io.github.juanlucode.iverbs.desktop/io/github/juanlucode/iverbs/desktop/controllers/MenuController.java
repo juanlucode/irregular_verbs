@@ -1,8 +1,8 @@
 package io.github.juanlucode.iverbs.desktop.controllers;
 
 
+import io.github.iverbs.core.model.value.TestVO;
 import io.github.iverbs.core.model.enumeration.Level;
-import io.github.iverbs.core.model.Test;
 import io.github.juanlucode.iverbs.desktop.front.MainAppFx;
 import io.github.juanlucode.iverbs.desktop.front.View;
 import javafx.fxml.FXML;
@@ -31,7 +31,7 @@ public class MenuController extends Controller {
 	}
 	
 	private void selectLevel(Level _level) {
-		this.getMainAppFx().setTest(new Test(_level));
+		this.getMainAppFx().setTest(new TestVO(_level));
 		this.getMainAppFx().toScene(View.QUESTION);
 	}
 }

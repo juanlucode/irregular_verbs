@@ -1,8 +1,8 @@
 package io.github.juanlucode.iverbs.desktop.controllers;
 
+import io.github.iverbs.core.model.value.VerbVO;
 import io.github.iverbs.core.model.value.QuestionVO;
-import io.github.iverbs.core.model.Test;
-import io.github.iverbs.core.model.Verb;
+import io.github.iverbs.core.model.value.TestVO;
 import io.github.iverbs.core.model.enumeration.VerbForm;
 import io.github.juanlucode.iverbs.desktop.front.MainAppFx;
 import io.github.juanlucode.iverbs.desktop.front.View;
@@ -19,7 +19,7 @@ import javafx.scene.input.KeyEvent;
 
 public class QuestionController extends Controller {
 
-	private Test test;
+	private TestVO testVO;
 	private byte idxQuestion = -1;
 	private QuestionVO questionVO = null;
 	
@@ -27,7 +27,7 @@ public class QuestionController extends Controller {
 	
 	QuestionController(MainAppFx _mainAppFx) {
 		super(_mainAppFx);
-		this.test = _mainAppFx.getTest();
+		this.testVO = _mainAppFx.getTest();
 	}
 	
 	@FXML
@@ -110,7 +110,7 @@ public class QuestionController extends Controller {
 		
 		btnNext.setOnAction(e -> nextQuestion());
 		
-		lblQuestionTotal.setText(String.valueOf(this.test.getQuestionary().getQuestions().length));
+		lblQuestionTotal.setText(String.valueOf(this.testVO.getQuestionary().getQuestions().length));
 		this.nextQuestion();
 	}
 	
@@ -118,10 +118,10 @@ public class QuestionController extends Controller {
 		
 
 		idxQuestion++;
-		if ( idxQuestion >= this.test.getQuestionary().getQuestions().length )
+		if ( idxQuestion >= this.testVO.getQuestionary().getQuestions().length )
 			this.getMainAppFx().toScene(View.RESULT);
 		else {
-			questionVO = test.getQuestionary().getQuestions()[idxQuestion];
+			questionVO = testVO.getQuestionary().getQuestions()[idxQuestion];
 			showQuestion(questionVO);
 		}
 		
@@ -130,15 +130,15 @@ public class QuestionController extends Controller {
 	private void showQuestion(QuestionVO _questionVO) {
 		
 		lblQuestionNum.setText(String.valueOf(idxQuestion + 1));
-		Verb verb = _questionVO.getVerbResponse();
+		VerbVO verbVO = _questionVO.getVerbResponse();
 		
-		txtInfinitive.setText(verb.get(VerbForm.INFINITIVE));
+		txtInfinitive.setText(verbVO.get(VerbForm.INFINITIVE));
 		txtInfinitive.setDisable(!_questionVO.getFlags()[0]);
 		
-		txtPast.setText(verb.get(VerbForm.PAST));
+		txtPast.setText(verbVO.get(VerbForm.PAST));
 		txtPast.setDisable(!_questionVO.getFlags()[1]);
 		
-		txtParticiple.setText(verb.get(VerbForm.PARTICIPLE));
+		txtParticiple.setText(verbVO.get(VerbForm.PARTICIPLE));
 		txtParticiple.setDisable(!_questionVO.getFlags()[2]);
 		
 		// show translate
@@ -147,8 +147,8 @@ public class QuestionController extends Controller {
 			cboTranslate.getItems().addAll(_questionVO.getTranslateOps());
 			cboTranslate.setValue(null);
 		} else {			
-			cboTranslate.getItems().add(verb.get(VerbForm.TRANSLATE));
-			cboTranslate.setValue(verb.get(VerbForm.TRANSLATE));
+			cboTranslate.getItems().add(verbVO.get(VerbForm.TRANSLATE));
+			cboTranslate.setValue(verbVO.get(VerbForm.TRANSLATE));
 		}
 		cboTranslate.setDisable(!_questionVO.getFlags()[3]);
 		

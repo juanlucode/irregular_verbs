@@ -2,11 +2,13 @@ package io.github.iverbs.core;
 
 import java.util.Scanner;
 
+import io.github.iverbs.core.model.business.QuestionaryBO;
+import io.github.iverbs.core.model.business.RepositoryBO;
+import io.github.iverbs.core.model.value.VerbVO;
 import io.github.iverbs.core.model.value.QuestionaryVO;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.value.QuestionVO;
-import io.github.iverbs.core.model.Repository;
-import io.github.iverbs.core.model.Verb;
+import io.github.iverbs.core.model.value.RepositoryVO;
 import io.github.iverbs.core.model.enumeration.VerbForm;
 
 /**
@@ -18,7 +20,7 @@ public class App {
     {
     	Scanner scanner = new Scanner(System.in);
     	
-    	Repository repository = new Repository();
+    	RepositoryVO repositoryVO = new RepositoryVO();
     	
     	final byte NUM_QUESTIONS = 10;
     	
@@ -35,11 +37,14 @@ public class App {
     	} while ( level < 0 && level > 2);
     	
     	System.out.println("Generating questionaryVO...");
-    	QuestionaryVO questionaryVO = repository.generateQuestionary(NUM_QUESTIONS, Level.values()[level]);
+    	QuestionaryVO questionaryVO = RepositoryBO.generateQuestionary(
+												repositoryVO.getVerbList(),
+												NUM_QUESTIONS,
+										Level.values()[level]);
     	
     	System.out.println();
     	
-    	Verb verbAsked = null;
+    	VerbVO verbAsked = null;
     	for (QuestionVO questionVO : questionaryVO.getQuestions()) {
     		verbAsked = questionVO.getVerbResponse();
     		
@@ -84,7 +89,7 @@ public class App {
     	System.out.println("******************");
     	System.out.println("* Result of test *");
     	System.out.println("******************");
-    	System.out.println(questionaryVO.check());
+    	System.out.println(QuestionaryBO.check(questionaryVO.getQuestions()));
 
     }
     

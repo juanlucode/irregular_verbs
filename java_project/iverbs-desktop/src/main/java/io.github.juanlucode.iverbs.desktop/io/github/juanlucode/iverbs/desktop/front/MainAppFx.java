@@ -5,7 +5,7 @@ package io.github.juanlucode.iverbs.desktop.front;
 
 import java.io.IOException;
 import java.net.URL;
-import io.github.iverbs.core.model.Test;
+import io.github.iverbs.core.model.value.TestVO;
 import io.github.juanlucode.iverbs.desktop.controllers.Controller;
 import io.github.juanlucode.iverbs.desktop.controllers.ControllerFactory;
 import javafx.application.Application;
@@ -28,7 +28,7 @@ public class MainAppFx extends Application implements AppManagement{
 	
 	private Stage stage;
 	
-	private Test test;
+	private TestVO testVO;
 	
 	//private Level level;
 	
@@ -40,12 +40,12 @@ public class MainAppFx extends Application implements AppManagement{
 		return stage;
 	}
 	
-	public Test getTest() {
-		return this.test;
+	public TestVO getTest() {
+		return this.testVO;
 	}
 	
-	public void setTest(Test _test) {
-		this.test = _test ;
+	public void setTest(TestVO _testVO) {
+		this.testVO = _testVO;
 	}
 	
 	/*
@@ -63,7 +63,7 @@ public class MainAppFx extends Application implements AppManagement{
 	public void start(Stage _stage) throws Exception {
         this.stage = _stage;
         
-        this.stage.setTitle("Irregular Verbs Test");
+        this.stage.setTitle("Irregular Verbs TestVO");
         
         this.toScene(View.MENU);
 

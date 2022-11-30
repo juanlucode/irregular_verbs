@@ -2,10 +2,11 @@ package io.github.juanlucode.iverbs.desktop.controllers;
 
 import java.io.IOException;
 
+import io.github.iverbs.core.model.business.QuestionaryBO;
+import io.github.iverbs.core.model.value.VerbVO;
 import io.github.iverbs.core.model.value.QuestionVO;
 import io.github.iverbs.core.model.value.QuestionaryVO;
-import io.github.iverbs.core.model.QuestionaryResult;
-import io.github.iverbs.core.model.Verb;
+import io.github.iverbs.core.model.value.QuestionaryResultVO;
 import io.github.iverbs.core.model.enumeration.VerbForm;
 import io.github.juanlucode.iverbs.desktop.front.MainAppFx;
 import io.github.juanlucode.iverbs.desktop.front.View;
@@ -20,7 +21,7 @@ import javafx.scene.paint.Color;
 public class ResultController extends Controller {
 
 	private QuestionaryVO questionaryVO;
-	private QuestionaryResult questionaryResult;
+	private QuestionaryResultVO questionaryResultVO;
 	private int idQuestion = 0;
 	private Image imgCorrect = null;
 	private Image imgWrong = null;
@@ -132,13 +133,13 @@ public class ResultController extends Controller {
 		
 		btnNewTest.setOnAction(e -> this.getMainAppFx().toScene(View.MENU));
 		btnExit.setOnAction(e -> System.exit(0));
-		showResult(questionaryResult);
+		showResult(questionaryResultVO);
 	}
 	
 	ResultController(MainAppFx _mainAppFx) {
 		super(_mainAppFx);
 		this.questionaryVO = _mainAppFx.getTest().getQuestionary();
-		this.questionaryResult = this.questionaryVO.check();
+		this.questionaryResultVO = QuestionaryBO.check(questionaryVO.getQuestions());
 		
 	}
 	
@@ -146,7 +147,7 @@ public class ResultController extends Controller {
 	 * Shows the result table.
 	 * @param result
 	 */
-	private void showResult(QuestionaryResult result) {
+	private void showResult(QuestionaryResultVO result) {
 		
 		lblVerbsResult.setText(String.valueOf(result.getTotalVerbs()));
 		lblCorrectsResult.setText(String.valueOf(result.getCorrects()));
@@ -168,9 +169,9 @@ public class ResultController extends Controller {
 	private void showQuestion(int id) {
 		QuestionVO questionVO = questionaryVO.getQuestions()[id];
 		// verb master
-		Verb verbM = questionVO.getVerbOrigin();
+		VerbVO verbM = questionVO.getVerbOrigin();
 		// verb response
-		Verb verbR = questionVO.getVerbResponse();
+		VerbVO verbR = questionVO.getVerbResponse();
 		
 
 		 

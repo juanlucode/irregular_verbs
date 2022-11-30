@@ -1,6 +1,6 @@
-package io.github.iverbs.core.model;
+package io.github.iverbs.core.model.value;
 
-public final class QuestionaryResult {
+public final class QuestionaryResultVO {
 	
 	private int totalVerbs;
 	private int corrects;
@@ -48,7 +48,7 @@ public final class QuestionaryResult {
 	 * @param total
 	 * @param correct
 	 */
-	public QuestionaryResult(int total, int correct) {
+	public QuestionaryResultVO(int total, int correct) {
 		super();
 		this.totalVerbs = total;
 		this.corrects = correct;
