@@ -90,7 +90,7 @@ public class RepositoryBO {
         Gson gson = new Gson();
         List<VerbVO> verbs = null
                 ;
-        try (InputStream inputStream = new FileInputStream("core/repo/irregular_verbs.json")) {
+        try (InputStream inputStream = new FileInputStream("iverbs-core/repo/irregular_verbs.json")) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
             Type listType = new TypeToken<List<VerbVO>>() {
             }.getType();
