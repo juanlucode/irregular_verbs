@@ -3,6 +3,7 @@ package io.github.iverbs.core.model.business;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.github.iverbs.commons.ArrayTools;
+import io.github.iverbs.core.logfile.LogFile;
 import io.github.iverbs.core.model.value.VerbVO;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.enumeration.VerbForm;
@@ -90,7 +91,7 @@ public class RepositoryBO {
         Gson gson = new Gson();
         List<VerbVO> verbs = null
                 ;
-        try (InputStream inputStream = new FileInputStream("iverbs-core/repo/irregular_verbs.json")) {
+        try (InputStream inputStream = new FileInputStream("XXXiverbs-core/repo/irregular_verbs.json")) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
             Type listType = new TypeToken<List<VerbVO>>() {
             }.getType();
@@ -98,6 +99,7 @@ public class RepositoryBO {
             verbs = gson.fromJson(reader, listType);
         } catch (IOException e) {
             e.printStackTrace();
+            LogFile.getInstance().put(e.getMessage());
         }
 
         return verbs;
