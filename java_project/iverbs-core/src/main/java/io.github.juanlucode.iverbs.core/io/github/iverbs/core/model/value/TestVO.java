@@ -5,6 +5,8 @@ import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.value.QuestionaryVO;
 import io.github.iverbs.core.model.value.RepositoryVO;
 
+import java.io.FileNotFoundException;
+
 /**
  * Describes a simple test, with its level and set of questions. implements on singleton pattern because there have to be one test object at once.
  * @author juanlucode
@@ -17,7 +19,7 @@ public class TestVO {
 	private QuestionaryVO questionaryVO;
 	
 	// Constructor
-	public TestVO(Level _level) {
+	public TestVO(Level _level) throws FileNotFoundException {
 		this.level = _level;
 		this.repositoryVO = new RepositoryVO();
 		this.questionaryVO = RepositoryBO.generateQuestionary(this.repositoryVO.getVerbList (), (byte) 10, this.level);

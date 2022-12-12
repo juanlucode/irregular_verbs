@@ -1,4 +1,4 @@
-package io.github.iverbs.core.logfile;
+package io.github.juanlucode.iverbs.desktop.logfile;
 
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class LogFile {
         logger = Logger.getGlobal();
         logger.setLevel(Level.SEVERE);
         try {
-            fileLog = new FileHandler("./irregular_verbs_core.log");
+            fileLog = new FileHandler("irregular_verbs_core.log");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

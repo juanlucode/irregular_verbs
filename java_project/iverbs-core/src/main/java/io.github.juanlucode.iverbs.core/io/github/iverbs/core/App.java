@@ -1,5 +1,6 @@
 package io.github.iverbs.core;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import io.github.iverbs.core.model.business.QuestionaryBO;
@@ -16,8 +17,7 @@ import io.github.iverbs.core.model.enumeration.VerbForm;
  *
  */
 public class App {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws FileNotFoundException {
     	Scanner scanner = new Scanner(System.in);
     	
     	RepositoryVO repositoryVO = new RepositoryVO();

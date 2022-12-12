@@ -1,5 +1,6 @@
 package io.github.iverbs.core.model.value;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import io.github.iverbs.core.model.business.RepositoryBO;
@@ -8,7 +9,7 @@ public class RepositoryVO {
 
 	private List<VerbVO> verbList = null;
 
-	public RepositoryVO() {
+	public RepositoryVO() throws FileNotFoundException {
 		this.verbList = RepositoryBO.load();
 	}
 

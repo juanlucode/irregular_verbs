@@ -3,7 +3,6 @@ package io.github.iverbs.core.model.business;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.github.iverbs.commons.ArrayTools;
-import io.github.iverbs.core.logfile.LogFile;
 import io.github.iverbs.core.model.value.VerbVO;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.enumeration.VerbForm;
@@ -60,7 +59,7 @@ public class RepositoryBO {
 
     private static void generateTranslateOps(QuestionVO _questionVO, List<VerbVO> _verbs) {
         // the correct opt put in last position
-        String[] ops = { null, null, null, _questionVO.getVerbOrigin().get(VerbForm.TRANSLATE) };
+        String[] ops = {null, null, null, _questionVO.getVerbOrigin().get(VerbForm.TRANSLATE)};
         Random random = new Random();
         boolean ok = true;
         VerbVO randomVerb;
@@ -85,22 +84,17 @@ public class RepositoryBO {
     /**
      * Load repository from a resources json file.
      */
-    public static List<VerbVO> load() {
+    public static List<VerbVO> load() throws FileNotFoundException {
 
         // https://mkyong.com/java/how-to-parse-json-with-gson/
         Gson gson = new Gson();
-        List<VerbVO> verbs = null
-                ;
-        try (InputStream inputStream = new FileInputStream("XXXiverbs-core/repo/irregular_verbs.json")) {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-            Type listType = new TypeToken<List<VerbVO>>() {
-            }.getType();
-            // Convert JSON File to List Java Object
-            verbs = gson.fromJson(reader, listType);
-        } catch (IOException e) {
-            e.printStackTrace();
-            LogFile.getInstance().put(e.getMessage());
-        }
+        List<VerbVO> verbs = null;
+        InputStream inputStream = new FileInputStream("XXXiverbs-core/repo/irregular_verbs.json");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+        Type listType = new TypeToken<List<VerbVO>>() {
+        }.getType();
+        // Convert JSON File to List Java Object
+        verbs = gson.fromJson(reader, listType);
 
         return verbs;
     }

@@ -14,6 +14,8 @@ import org.junit.jupiter.api.TestMethodOrder;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.value.QuestionaryVO;
 
+import java.io.FileNotFoundException;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GeneralTest {
 
@@ -23,7 +25,7 @@ class GeneralTest {
 	@Test
 	@Order(1)
 	@DisplayName("Testing repositoryVO creation")
-	void testRepository() {
+	void testRepository() throws FileNotFoundException {
 		
 		this.repositoryVO = new RepositoryVO();
 		
@@ -33,7 +35,7 @@ class GeneralTest {
 	@Test
 	@Order(2)
 	@DisplayName("Testing questionaryVO creation")
-	void testQuestionary() {
+	void testQuestionary() throws FileNotFoundException {
 		this.repositoryVO = new RepositoryVO();
 		this.questionaryVO = RepositoryBO.generateQuestionary( this.repositoryVO.getVerbList() ,(byte) 10, Level.LEVEL_HARD);
 		

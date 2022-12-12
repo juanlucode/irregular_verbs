@@ -8,8 +8,6 @@
 module io.github.juanlucode.iverbs.core {
 	
 	requires com.google.gson;
-    requires java.logging;
-
 
     exports io.github.iverbs.commons;
     exports io.github.iverbs.core;
