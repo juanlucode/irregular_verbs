@@ -44,6 +44,34 @@
                 </executions>
             </plugin>
 			<plugin>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.6</version>
+				<executions>
+					<execution>
+						<!-- Default persistenceConfiguration for running -->
+						<id>default-cli</id>
+						<configuration>
+							<mainClass>${main.class}</mainClass>
+						</configuration>
+					</execution>
+					<execution>
+						<!-- PersistenceConfiguration for debugging -->
+						<id>debug</id>
+						<configuration>
+							<options>
+								<option>-agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=${jpda.address}
+								</option>
+							</options>
+							<mainClass>${main.class}</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
+
+			<plugin>
+				<!-- To generate native images -->
 				<groupId>com.gluonhq</groupId>
 				<artifactId>gluonfx-maven-plugin</artifactId>
 				<version>1.0.16</version>
