@@ -18,7 +18,7 @@ public class LogFile {
         logger = Logger.getGlobal();
         logger.setLevel(Level.SEVERE);
         try {
-            fileLog = new FileHandler("irregular_verbs_core.log");
+            fileLog = new FileHandler("C:\\Users\\juanluis.garciar\\Documents\\_propios\\proyectos\\irregular_verbs\\java_project\\irregular_verbs_core.log");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

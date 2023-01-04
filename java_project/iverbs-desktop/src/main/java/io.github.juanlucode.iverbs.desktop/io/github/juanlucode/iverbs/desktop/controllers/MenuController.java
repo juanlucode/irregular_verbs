@@ -36,9 +36,8 @@ public class MenuController extends Controller {
 	private void selectLevel(Level _level) {
 		try {
 			this.getMainAppFx().setTest(new TestVO(_level));
-		} catch (FileNotFoundException e) {
-			LogFile.getInstance().put(e.getMessage());
-			e.printStackTrace();
+		} catch (Exception e) {
+			LogFile.getInstance().put(e.getLocalizedMessage());
 		}
 		this.getMainAppFx().toScene(View.QUESTION);
 	}
