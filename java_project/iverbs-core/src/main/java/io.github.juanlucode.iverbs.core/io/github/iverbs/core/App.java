@@ -4,11 +4,8 @@ import java.util.Scanner;
 
 import io.github.iverbs.core.model.business.QuestionaryBO;
 import io.github.iverbs.core.model.business.RepositoryBO;
-import io.github.iverbs.core.model.value.VerbVO;
-import io.github.iverbs.core.model.value.QuestionaryVO;
+import io.github.iverbs.core.model.value.*;
 import io.github.iverbs.core.model.enumeration.Level;
-import io.github.iverbs.core.model.value.QuestionVO;
-import io.github.iverbs.core.model.value.RepositoryVO;
 import io.github.iverbs.core.model.enumeration.VerbForm;
 
 /**
@@ -19,8 +16,8 @@ public class App {
     public static void main( String[] args )
     {
     	Scanner scanner = new Scanner(System.in);
-    	
-    	RepositoryVO repositoryVO = new RepositoryVO();
+
+		SessionVO sessionVO = SessionVO.getInstance("");
     	
     	final byte NUM_QUESTIONS = 10;
     	
@@ -38,7 +35,7 @@ public class App {
     	
     	System.out.println("Generating questionaryVO...");
     	QuestionaryVO questionaryVO = RepositoryBO.generateQuestionary(
-												repositoryVO.getVerbList(),
+												sessionVO.getRepository().getVerbList(),
 												NUM_QUESTIONS,
 										Level.values()[level]);
     	

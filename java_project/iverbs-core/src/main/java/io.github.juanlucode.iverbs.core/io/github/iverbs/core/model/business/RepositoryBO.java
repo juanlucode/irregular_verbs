@@ -84,13 +84,13 @@ public class RepositoryBO {
     /**
      * Load repository from a resources json file.
      */
-    public static List<VerbVO> load() {
+    public static List<VerbVO> load(String _verbsFile) {
 
         // https://mkyong.com/java/how-to-parse-json-with-gson/
         Gson gson = new Gson();
         List<VerbVO> verbs = null
                 ;
-        try (InputStream inputStream = new FileInputStream("iverbs-core/repo/irregular_verbs.json")) {
+        try (InputStream inputStream = new FileInputStream(_verbsFile)) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
             Type listType = new TypeToken<List<VerbVO>>() {
             }.getType();
