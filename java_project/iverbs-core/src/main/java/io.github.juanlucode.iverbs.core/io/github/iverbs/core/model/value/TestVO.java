@@ -17,7 +17,7 @@ public class TestVO {
 	// Constructor
 	public TestVO(Level _level) {
 		this.level = _level;
-		this.questionaryVO = RepositoryBO.generateQuestionary(.getVerbList (), (byte) 10, this.level);
+		this.questionaryVO = RepositoryBO.generateQuestionary( (byte) 10, this.level);
 	}
 	
 	

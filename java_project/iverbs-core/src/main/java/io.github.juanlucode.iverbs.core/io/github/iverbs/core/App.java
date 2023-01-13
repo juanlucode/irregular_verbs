@@ -17,8 +17,7 @@ public class App {
     {
     	Scanner scanner = new Scanner(System.in);
 
-		SessionVO sessionVO = SessionVO.getInstance("");
-    	
+
     	final byte NUM_QUESTIONS = 10;
     	
     	byte level = 0;
@@ -34,10 +33,7 @@ public class App {
     	} while ( level < 0 && level > 2);
     	
     	System.out.println("Generating questionaryVO...");
-    	QuestionaryVO questionaryVO = RepositoryBO.generateQuestionary(
-												sessionVO.getRepository().getVerbList(),
-												NUM_QUESTIONS,
-										Level.values()[level]);
+    	QuestionaryVO questionaryVO = RepositoryBO.generateQuestionary(NUM_QUESTIONS, Level.values()[level]);
     	
     	System.out.println();
     	

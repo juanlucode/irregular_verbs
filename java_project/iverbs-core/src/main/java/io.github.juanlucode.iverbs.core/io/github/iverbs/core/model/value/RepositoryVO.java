@@ -9,13 +9,13 @@ public class RepositoryVO {
 	private static RepositoryVO instance;
 	private List<VerbVO> verbList = null;
 
-	private RepositoryVO(String _verbsFile) {
-		this.verbList = RepositoryBO.load(_verbsFile);
+	private RepositoryVO() {
+		this.verbList = RepositoryBO.load();
 	}
 
-	public static RepositoryVO getInstance(String _verbsFile){
+	public static RepositoryVO getInstance(){
 		if ( instance == null ){
-			instance = new RepositoryVO(_verbsFile);
+			instance = new RepositoryVO();
 		}
 		return instance;
 	}
