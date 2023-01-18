@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <!-- Yo le doy este identificador para mis aplicaciones -->
+    <id>image</id>
+
+    <!--
+        http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html
+    -->
+    <formats>
+        <!-- La salida será un directorio -->
+        <format>dir</format>
+        <format>zip</format>
+    </formats>
+
+    Generará la salida a la carpeta dist al mismo nivel del pom.xml..
+    manias, me gusta así
+    <baseDirectory>./iverbs-image</baseDirectory>
+
+
+    <fileSets>
+        <!--
+            Copiamos todos los jar del directorio "target" (donde compila maven)
+            al directorio de salida "baseDirectory" es decir, sólo copiará el jar
+            propio de la aplicación
+        -->
+        <fileSet>
+            <directory>data</directory>
+            <!-- <outputDirectory>./data</outputDirectory> -->
+            <includes>
+                <include>*.json</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</assembly>

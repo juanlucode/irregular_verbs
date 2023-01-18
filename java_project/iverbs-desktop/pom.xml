@@ -50,11 +50,11 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>${main.class}</mainClass>
-                    <compress>2</compress>
+                    <!-- <compress>2</compress> -->
                     <noManPages>true</noManPages>
                     <launcher>iverbs-launcher</launcher>
                     <jlinkImageName>iverbs-image</jlinkImageName>
-                    <jlinkZipName>iverbs-zip</jlinkZipName>
+                    <!-- <jlinkZipName>iverbs-zip</jlinkZipName> -->
                 </configuration>
                 <executions>
                     <execution>
@@ -129,7 +129,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptors>
-                        <descriptor>./src/main/assembly/assembly.xml</descriptor>
+                        <descriptor>src/main/assembly/assembly_image.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <!-- El assembly se creará en la fase de package, de esta forma nos evitaremos hacer
