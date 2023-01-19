@@ -6,10 +6,18 @@ import io.github.iverbs.core.model.business.RepositoryBO;
 
 public class RepositoryVO {
 
+	private static RepositoryVO instance;
 	private List<VerbVO> verbList = null;
 
-	public RepositoryVO() {
+	private RepositoryVO() {
 		this.verbList = RepositoryBO.load();
+	}
+
+	public static RepositoryVO getInstance(){
+		if ( instance == null ){
+			instance = new RepositoryVO();
+		}
+		return instance;
 	}
 
 	public List<VerbVO> getVerbList() {

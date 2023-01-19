@@ -3,6 +3,7 @@ package io.github.iverbs.core.model.business;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.github.iverbs.commons.ArrayTools;
+import io.github.iverbs.core.model.value.RepositoryVO;
 import io.github.iverbs.core.model.value.VerbVO;
 import io.github.iverbs.core.model.enumeration.Level;
 import io.github.iverbs.core.model.enumeration.VerbForm;
@@ -26,11 +27,16 @@ public class RepositoryBO {
      * @param _level
      * @return
      */
-    public static QuestionaryVO generateQuestionary(List<VerbVO> _verbs, byte _numQuestions, Level _level) {
+    public static QuestionaryVO generateQuestionary(byte _numQuestions, Level _level) {
+
+        // verbs from repository
+        List<VerbVO> verbsRepository = RepositoryVO.getInstance().getVerbList();
         // list of index verb selected, used to avoid repetitions
         List<VerbVO> listSelected = new ArrayList<>();
 
         Random random = new Random();
+
+
 
         // selection verb counter
         VerbVO verbCandidate = null;
@@ -38,7 +44,7 @@ public class RepositoryBO {
         for (var i = 0; i < _numQuestions; i++) {
             do {
                 // select random verb in repository
-                verbCandidate = _verbs.get(random.nextInt(_verbs.size()));
+                verbCandidate = verbsRepository.get(random.nextInt(verbsRepository.size()));
                 // avoiding repetitions
             } while (listSelected.contains(verbCandidate));
             listSelected.add(verbCandidate);
@@ -52,7 +58,7 @@ public class RepositoryBO {
         // for test question
         for (QuestionVO questionVO : questionaryVO.getQuestions())
             if (questionVO.getVerbResponse().get(VerbForm.TRANSLATE) == null)
-                generateTranslateOps(questionVO, _verbs);
+                generateTranslateOps(questionVO, verbsRepository);
 
         return questionaryVO;
     }
@@ -88,9 +94,9 @@ public class RepositoryBO {
 
         // https://mkyong.com/java/how-to-parse-json-with-gson/
         Gson gson = new Gson();
-        List<VerbVO> verbs = null
-                ;
-        try (InputStream inputStream = new FileInputStream("iverbs-core/repo/irregular_verbs.json")) {
+        List<VerbVO> verbs = null;
+        //System.out.println(System.getProperty("user.dir"));
+        try (InputStream inputStream = new FileInputStream("../data/irregular_verbs.json")) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
             Type listType = new TypeToken<List<VerbVO>>() {
             }.getType();

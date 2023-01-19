@@ -17,7 +17,8 @@ import io.github.iverbs.core.model.value.QuestionaryVO;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GeneralTest {
 
-	private RepositoryVO repositoryVO =  null;
+	private RepositoryVO repositoryVO =  RepositoryVO.getInstance();
+
 	private QuestionaryVO questionaryVO = null;
 	
 	@Test
@@ -25,17 +26,14 @@ class GeneralTest {
 	@DisplayName("Testing repositoryVO creation")
 	void testRepository() {
 		
-		this.repositoryVO = new RepositoryVO();
-		
-		assertNotEquals(0, this.repositoryVO.size());
+		assertNotEquals(0, repositoryVO.getVerbList().size());
 	}
 
 	@Test
 	@Order(2)
 	@DisplayName("Testing questionaryVO creation")
 	void testQuestionary() {
-		this.repositoryVO = new RepositoryVO();
-		this.questionaryVO = RepositoryBO.generateQuestionary( this.repositoryVO.getVerbList() ,(byte) 10, Level.LEVEL_HARD);
+		this.questionaryVO = RepositoryBO.generateQuestionary((byte) 10, Level.LEVEL_HARD);
 		
 		// amont of questions
 		assertEquals(10, questionaryVO.getQuestions().length);
