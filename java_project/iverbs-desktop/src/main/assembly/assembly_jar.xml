@@ -26,14 +26,13 @@
         -->
         <fileSet>
             <directory>target</directory>
-            <outputDirectory>.</outputDirectory>
+            <outputDirectory>./bin</outputDirectory>
             <includes>
                 <include>*.jar</include>
             </includes>
         </fileSet>
         <fileSet>
             <directory>data</directory>
-           <!-- <outputDirectory>./data</outputDirectory> -->
             <includes>
                 <include>*.json</include>
             </includes>

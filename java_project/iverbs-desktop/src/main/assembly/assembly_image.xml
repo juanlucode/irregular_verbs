@@ -12,10 +12,7 @@
         <format>zip</format>
     </formats>
 
-    Generará la salida a la carpeta dist al mismo nivel del pom.xml..
-    manias, me gusta así
-    <baseDirectory>./iverbs-image</baseDirectory>
-
+    <baseDirectory>./</baseDirectory>
 
     <fileSets>
         <!--
@@ -25,7 +22,6 @@
         -->
         <fileSet>
             <directory>data</directory>
-            <!-- <outputDirectory>./data</outputDirectory> -->
             <includes>
                 <include>*.json</include>
             </includes>

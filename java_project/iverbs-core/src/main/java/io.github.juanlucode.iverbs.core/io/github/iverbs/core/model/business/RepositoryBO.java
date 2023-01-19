@@ -96,7 +96,7 @@ public class RepositoryBO {
         Gson gson = new Gson();
         List<VerbVO> verbs = null;
         //System.out.println(System.getProperty("user.dir"));
-        try (InputStream inputStream = new FileInputStream("data/irregular_verbs.json")) {
+        try (InputStream inputStream = new FileInputStream("../data/irregular_verbs.json")) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
             Type listType = new TypeToken<List<VerbVO>>() {
             }.getType();

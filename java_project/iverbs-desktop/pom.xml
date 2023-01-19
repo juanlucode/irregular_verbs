@@ -53,8 +53,9 @@
                     <!-- <compress>2</compress> -->
                     <noManPages>true</noManPages>
                     <launcher>iverbs-launcher</launcher>
-                    <jlinkImageName>iverbs-image</jlinkImageName>
+                    <jlinkImageName>iverbs-desktop-1.0-image</jlinkImageName>
                     <!-- <jlinkZipName>iverbs-zip</jlinkZipName> -->
+
                 </configuration>
                 <executions>
                     <execution>
@@ -130,7 +131,9 @@
                 <configuration>
                     <descriptors>
                         <descriptor>src/main/assembly/assembly_image.xml</descriptor>
+                        <!-- <descriptor>src/main/assembly/assembly_jar.xml</descriptor> -->
                     </descriptors>
+                    <!-- <outputDirectory>iverbs-image</outputDirectory> -->
                 </configuration>
                 <!-- El assembly se creará en la fase de package, de esta forma nos evitaremos hacer
                      mvn assembly:assembly, bastará con hacer mvn package
