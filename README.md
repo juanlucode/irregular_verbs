@@ -11,13 +11,13 @@ For execute
 ===========
 ./irregular_verbs/irregular_verbs/irregular_verbs_desktop
 
-mvn clean javafx:run
+$ mvn clean javafx:run
 
 *create a jar with dependencies in lib folder* (requires that javafx modules are availables)
 =============================================
 First, we need change the setting of maven-assembly-plugin at iverbs-desktop/pom.xml, property <descriptor>src/main/assembly/assembly_jar.xml</descriptor>
 
-$mvn clean package assembly:single
+$ mvn clean package assembly:single
 
 To create a custom runtime, using th JavaFX Maven plugin:
 =========================================================
