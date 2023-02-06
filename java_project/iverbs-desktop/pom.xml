@@ -52,9 +52,10 @@
                     <mainClass>${main.class}</mainClass>
                     <!-- <compress>2</compress> -->
                     <noManPages>true</noManPages>
+                    <noHeaderFiles>true</noHeaderFiles>
                     <launcher>iverbs-launcher</launcher>
-                    <jlinkImageName>iverbs-desktop-1.0-image</jlinkImageName>
-                    <!-- <jlinkZipName>iverbs-zip</jlinkZipName> -->
+                    <jlinkImageName>iverbs-1.0</jlinkImageName>
+                    <jlinkZipName>iverbs-1.0</jlinkZipName>
 
                 </configuration>
                 <executions>
@@ -78,20 +79,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <!-- To generate native images -->
-                <groupId>com.gluonhq</groupId>
-                <artifactId>gluonfx-maven-plugin</artifactId>
-                <version>1.0.16</version>
-                <configuration>
-                    <target>host</target>
-                    <mainClass>${main.class}</mainClass>
-                    <graalvmHome>C:\Program Files\graalvm-svm-java17-gluon</graalvmHome>
-
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -131,7 +118,7 @@
                 <configuration>
                     <descriptors>
                         <descriptor>src/main/assembly/assembly_image.xml</descriptor>
-                        <!-- <descriptor>src/main/assembly/assembly_jar.xml</descriptor> -->
+                        <!--<descriptor>src/main/assembly/assembly_jar.xml</descriptor>-->
                     </descriptors>
                     <!-- <outputDirectory>iverbs-image</outputDirectory> -->
                 </configuration>

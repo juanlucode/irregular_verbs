@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a115a3a1-c6d1-488c-8de4-e7b9b1384883" name="Changes" comment="" />
+    <list default="true" id="a115a3a1-c6d1-488c-8de4-e7b9b1384883" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/java_project/iverbs-desktop/src/main/resources/fxml/menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project/iverbs-desktop/src/main/resources/fxml/question.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project/iverbs-desktop/src/main/resources/fxml/result.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +26,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/juanluis.garciar/Documents/_propios/proyectos/irregular_verbs/java_project"
+    "last_opened_file_path": "C:/Users/juanluis.garciar/Taller/_propios/proyectos/irregular_verbs"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
